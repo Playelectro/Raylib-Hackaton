@@ -8,7 +8,7 @@ int main()
 
     // Window sizes
     const int screenWidth = 800;
-    const int screenHeight = 601;
+    const int screenHeight = 600;
 
     
     // Init window
@@ -35,8 +35,8 @@ int main()
             BeginMode3D(camera);
 
             // Draw 3D
-            //sebi seful nostru
-            ///nigga
+
+            
             EndMode3D();
         EndDrawing();
     }
