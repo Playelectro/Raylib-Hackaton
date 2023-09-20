@@ -35,6 +35,7 @@ int main()
             BeginMode3D(camera);
 
             // Draw 3D
+            //sebi seful nostru
 
             EndMode3D();
         EndDrawing();
