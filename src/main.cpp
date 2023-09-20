@@ -36,7 +36,7 @@ int main()
 
             // Draw 3D
             //sebi seful nostru
-
+            ///nigga
             EndMode3D();
         EndDrawing();
     }
