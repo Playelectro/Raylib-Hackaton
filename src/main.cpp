@@ -10,8 +10,10 @@ int main()
     const int screenWidth = 800;
     const int screenHeight = 600;
 
+    
     // Init window
     InitWindow(screenWidth, screenHeight, "Base Application");
+    SetWindowState(FLAG_WINDOW_RESIZABLE);
     SetTargetFPS(60);
 
     // Init 3D camera
@@ -31,13 +33,9 @@ int main()
             ClearBackground(darkGreen);
             
             BeginMode3D(camera);
-            // Draw 3D objects
-                spin+=0.1f;
-                rlRotatef(spin,1.0f, 1.0f, 1.0f);
-                DrawSphereWires((Vector3){1.0f, 0.0f, 2.0f}, 2.0f, 16, 16, LIME);
-                
-                if (spin > 360)
-                    spin = 0;
+
+            // Draw 3D
+
             EndMode3D();
         EndDrawing();
     }
