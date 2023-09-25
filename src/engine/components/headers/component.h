@@ -1,9 +1,11 @@
 #ifndef ACTOR_COMPONENT
 #define ACTOR_COMPONENT
 
+// Marker class
+
 class Component{
     public:
-        virtual void updateComponent();
+        bool active = true;
 }; 
 
 
