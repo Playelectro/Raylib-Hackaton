@@ -19,11 +19,20 @@ void SystemManager::AddActor(Actor* actor){
     for(int i =0; i < systems.size(); i++){
         auto req = systems[i]->GetRequirements();
         auto comp = actor->GetComponents();
+        
         for(int j = 0; j < comp.size(); j++){
-            if(){
-                DACA EXISTA SCOATE
+            for(int k=0;k<req.size();k++){
+                if(strcmp(req[k],comp[j])==0){
+                    req.erase(req.begin()+k);
+                    k--;
+                }
             }
         }
+
+        if (req.size()==0){
+            systems[i]->AddActor(*actor);
+        }
+
     }
 
 }
@@ -60,12 +69,31 @@ void SystemManager::RemoveSystem(System* system) {
 }
 
 void SystemManager::Update(){
-    for(int i =0; i < actors.size(); i++){
-        Actor* a = actors[i];
+    for(int l =0; l < actors.size(); l++){
+        Actor* a = actors[l];
         
         if(a->flagged){
             
-            UPDATE ACTOR SUBSCRIPTION
+            for(int i =0; i < systems.size(); i++){
+                auto req = systems[i]->GetRequirements();
+                auto comp = a->GetComponents();
+        
+                for(int j = 0; j < comp.size(); j++){
+                    for(int k=0;k<req.size();k++){
+                        if(strcmp(req[k],comp[j])==0){
+                            req.erase(req.begin()+k);
+                            k--;
+                        }
+                    }
+                }
+
+                if (req.size()==0){
+                    systems[i]->AddActor(*a);
+                }else
+                    systems[i]->RemoveActor(*a);
+
+            }
+
             a->flagged = false;
         }
 

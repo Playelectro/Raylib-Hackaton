@@ -6,7 +6,7 @@
 #include <assert.h>
 #include <vector>
 #include <iostream>
-
+#include <cstring>
 class SystemManager{
 
     private:
