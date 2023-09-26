@@ -1,7 +1,7 @@
 #include "systems/headers/system_manager.h"
 
 SystemManager* SystemManager::GetInstance(){
-    if (manager==nullptr){
+    if (manager==nullptr || manager == NULL){
         manager = new SystemManager();
     }
     return manager;
@@ -66,6 +66,7 @@ void SystemManager::RemoveSystem(System* system) {
     assert(it != systems.end() && "Error : Tried to remove a non-existent SYSTEM from the System Manager!");
 
     systems.erase(it);
+    delete &it;
 }
 
 void SystemManager::Update(){
@@ -73,7 +74,7 @@ void SystemManager::Update(){
         Actor* a = actors[l];
         
         if(a->flagged){
-            
+
             for(int i =0; i < systems.size(); i++){
                 auto req = systems[i]->GetRequirements();
                 auto comp = a->GetComponents();
@@ -84,17 +85,21 @@ void SystemManager::Update(){
                             req.erase(req.begin()+k);
                             k--;
                         }
-                    }
+                     }
                 }
 
                 if (req.size()==0){
-                    systems[i]->AddActor(*a);
+                    a->systems += systems[i]->AddActor(*a);
                 }else
-                    systems[i]->RemoveActor(*a);
+                    a->systems -= systems[i]->RemoveActor(*a);
 
             }
 
             a->flagged = false;
+
+            if(a->systems<=0){
+                RemoveActor(a);
+            }
         }
 
     }

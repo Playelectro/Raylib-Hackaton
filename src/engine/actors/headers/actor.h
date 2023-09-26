@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <typeinfo>
 #include <iostream>
-#include "components/headers/component.h"
+#include "src\engine\components\headers\component.h"
 #include <vector>
 
 class Actor{
@@ -14,6 +14,7 @@ class Actor{
 
     public:
     bool flagged = false;
+    int systems = 0;
 
     void AddComponent(Component*);
 

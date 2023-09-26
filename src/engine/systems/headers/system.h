@@ -5,11 +5,11 @@
 #include <vector>
 #include <assert.h>
 #include <algorithm>
-#include "engine/actors/headers/actor.h"
+#include "src\engine\actors\headers\actor.h"
 
 class System{
     private:
-        std::vector<Actor&> actors;
+        std::vector<Actor> actors;
     protected:
         std::vector<const char*> requirements;
     
@@ -20,19 +20,9 @@ class System{
             return requirements;
         }
 
-        virtual void AddActor(Actor &actor);
+        virtual bool AddActor(Actor actor);
 
-        virtual void RemoveActor(Actor& actor){
-            
-            auto it = std::find(actors.begin(), actors.end(), actor);
-
-            if(it == actors.end()){
-                std::cout<< "Error: Tried to remove instances of the non-existent actor from the system!\n";
-                return;
-            }
-
-            actors.erase(it);
-        }
+        virtual bool RemoveActor(Actor actor);
 
         virtual void Update();
 

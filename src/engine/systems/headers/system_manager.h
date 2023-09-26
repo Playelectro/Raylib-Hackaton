@@ -2,7 +2,7 @@
 #define SYSTEM_MANAGER
 
 #include "system.h"
-#include "actors/headers/actor.h"
+#include "src\engine\actors\headers\actor.h"
 #include <assert.h>
 #include <vector>
 #include <iostream>
@@ -15,16 +15,18 @@ class SystemManager{
         static SystemManager* manager;
 
         void UpdateSystems(); 
-
-    protected:
         SystemManager();
 
     public:
 
         static SystemManager* GetInstance();
 
+
+        ~SystemManager(){
+            delete manager;
+        }
+
         SystemManager(SystemManager &other) = delete;
-        void operator=(const SystemManager &) = delete;
 
         void AddActor(Actor*);
         void RemoveActor(Actor*);
