@@ -1,6 +1,5 @@
 #include <raylib.h>
-#include <rlgl.h>
-#include "systems/headers/system_manager.h"
+#include "engine/systems/headers/system_manager.h"
 
 int main()
 {
@@ -29,7 +28,7 @@ int main()
     while (!WindowShouldClose())
     {
         SystemManager::GetInstance()->Update();
-        
+
         BeginDrawing();
             ClearBackground(darkGreen);
             
