@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include <rlgl.h>
+#include "systems/headers/system_manager.h"
 
 int main()
 {
@@ -22,13 +23,13 @@ int main()
     camera.target = (Vector3){ 0.0f, 0.0f, 0.0f };
     camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
     camera.fovy = 45.0f;
-    camera.projection = CAMERA_PERSPECTIVE;          
-
-
-    float spin =0.0f;
+    camera.projection = CAMERA_PERSPECTIVE;
+    
 
     while (!WindowShouldClose())
     {
+        SystemManager::GetInstance()->Update();
+        
         BeginDrawing();
             ClearBackground(darkGreen);
             
