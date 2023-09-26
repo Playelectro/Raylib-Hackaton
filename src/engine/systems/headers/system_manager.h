@@ -1,5 +1,5 @@
-#ifndef SYSTEM_MANAGER
-#define SYSTEM_MANAGER
+#ifndef SYSTEM_MANAGER_ECS
+#define SYSTEM_MANAGER_ECS
 
 #include "system.h"
 #include "src\engine\actors\headers\actor.h"
@@ -12,28 +12,16 @@ class SystemManager{
     private:
         std::vector<System*> systems;
         std::vector<Actor*> actors;
-        static SystemManager* manager;
 
         void UpdateSystems(); 
-        SystemManager();
 
     public:
-
-        static SystemManager* GetInstance();
-
-
-        ~SystemManager(){
-            delete manager;
-        }
-
-        SystemManager(SystemManager &other) = delete;
-
         void AddActor(Actor*);
         void RemoveActor(Actor*);
-        void Update();
         void AddSystem(System*);
         void RemoveSystem(System*);
 
+        void Update();
 
 };
 

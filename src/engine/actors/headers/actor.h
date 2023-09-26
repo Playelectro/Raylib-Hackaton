@@ -24,7 +24,13 @@ class Actor{
     template<typename T>
     T& GetComponent();
 
-    ~Actor();
+    ~Actor(){
+        for(auto it = this->components.begin(); it != this->components.end(); it++){
+            delete it->second;
+        }
+
+        this->components.clear();
+    }
 };
 
 

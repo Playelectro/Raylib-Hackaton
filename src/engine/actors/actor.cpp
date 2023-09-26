@@ -1,4 +1,4 @@
-#include "actors/headers/actor.h"
+#include "src/engine/actors/headers/actor.h"
 
 void Actor::AddComponent(Component* component){
     const char* component_Id = typeid(component).name()+1;
@@ -23,14 +23,6 @@ T& Actor::GetComponent(){
     }
     
     return this->components[component_Id];
-}
-
-Actor::~Actor(){
-    for(auto it = this->components.begin(); it != this->components.end(); it++){
-        delete it->second;
-    }
-
-    this->components.clear();
 }
 
 std::vector<const char*> Actor::GetComponents(){

@@ -1,8 +1,14 @@
 #include <raylib.h>
-#include "engine/systems/headers/system_manager.h"
+#include "src/engine/actors/headers/actor.h"
+#include "src/engine/components/headers/position_component.h"
+
+#include "src/engine/systems/headers/system_manager.h"
+
+SystemManager* manager;
 
 int main()
 {
+    
     // Base colour background
     Color darkGreen = Color{0, 0, 0, 255};
 
@@ -10,7 +16,7 @@ int main()
     const int screenWidth = 800;
     const int screenHeight = 600;
 
-    
+
     // Init window
     InitWindow(screenWidth, screenHeight, "Base Application");
     SetWindowState(FLAG_WINDOW_RESIZABLE);
@@ -24,10 +30,14 @@ int main()
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
     
+    manager = new SystemManager();
+
+    Actor* actor = new Actor();
+
 
     while (!WindowShouldClose())
     {
-        SystemManager::GetInstance()->Update();
+        manager->Update();
 
         BeginDrawing();
             ClearBackground(darkGreen);
@@ -41,6 +51,8 @@ int main()
         EndDrawing();
     }
 
+    delete manager;
+    delete actor;
     CloseWindow();
     return 0;
 }

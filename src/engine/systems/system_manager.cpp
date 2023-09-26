@@ -1,11 +1,42 @@
-#include "systems/headers/system_manager.h"
+#include "src/engine/systems/headers/system_manager.h"
 
-SystemManager* SystemManager::GetInstance(){
-    if (manager==nullptr || manager == NULL){
-        manager = new SystemManager();
+void SystemManager::Update(){
+            for(int l =0; l < actors.size(); l++){
+                 Actor* a = actors[l];
+        
+            if(a->flagged){
+
+                for(int i =0; i < systems.size(); i++){
+                    auto req = systems[i]->GetRequirements();
+                    auto comp = a->GetComponents();
+            
+                    for(int j = 0; j < comp.size(); j++){
+                        for(int k=0;k<req.size();k++){
+                            if(strcmp(req[k],comp[j])==0){
+                                req.erase(req.begin()+k);
+                                k--;
+                            }
+                        }
+                    }
+
+                    if (req.size()==0){
+                        a->systems += systems[i]->AddActor(*a);
+                    }else
+                        a->systems -= systems[i]->RemoveActor(*a);
+
+                }
+
+                a->flagged = false;
+
+                if(a->systems<=0){
+                    RemoveActor(a);
+                }
+
+            }
+        }
+            UpdateSystems();
+    
     }
-    return manager;
-}
 
 void SystemManager::AddActor(Actor* actor){
 
@@ -36,6 +67,7 @@ void SystemManager::AddActor(Actor* actor){
     }
 
 }
+
 
 void SystemManager::RemoveActor(Actor* actor) {
 
@@ -69,43 +101,6 @@ void SystemManager::RemoveSystem(System* system) {
     delete &it;
 }
 
-void SystemManager::Update(){
-    for(int l =0; l < actors.size(); l++){
-        Actor* a = actors[l];
-        
-        if(a->flagged){
-
-            for(int i =0; i < systems.size(); i++){
-                auto req = systems[i]->GetRequirements();
-                auto comp = a->GetComponents();
-        
-                for(int j = 0; j < comp.size(); j++){
-                    for(int k=0;k<req.size();k++){
-                        if(strcmp(req[k],comp[j])==0){
-                            req.erase(req.begin()+k);
-                            k--;
-                        }
-                     }
-                }
-
-                if (req.size()==0){
-                    a->systems += systems[i]->AddActor(*a);
-                }else
-                    a->systems -= systems[i]->RemoveActor(*a);
-
-            }
-
-            a->flagged = false;
-
-            if(a->systems<=0){
-                RemoveActor(a);
-            }
-        }
-
-    }
-
-    UpdateSystems();
-}
 
 void SystemManager::UpdateSystems(){
     for(int i =0; i < systems.size(); i++){
