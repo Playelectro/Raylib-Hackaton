@@ -1,4 +1,6 @@
-#include "src/engine/systems/headers/system_manager.h"
+#include "system_manager.h"
+
+SystemManager* SystemManager::instancePtr = NULL;
 
 void SystemManager::Update(){
             for(int l =0; l < actors.size(); l++){
@@ -12,7 +14,8 @@ void SystemManager::Update(){
             
                     for(int j = 0; j < comp.size(); j++){
                         for(int k=0;k<req.size();k++){
-                            if(strcmp(req[k],comp[j])==0){
+                            
+                            if(req[k]==comp[j]){
                                 req.erase(req.begin()+k);
                                 k--;
                             }
@@ -20,9 +23,9 @@ void SystemManager::Update(){
                     }
 
                     if (req.size()==0){
-                        a->systems += systems[i]->AddActor(*a);
+                        a->systems += systems[i]->AddActor(a);
                     }else
-                        a->systems -= systems[i]->RemoveActor(*a);
+                        a->systems -= systems[i]->RemoveActor(a);
 
                 }
 
@@ -38,6 +41,17 @@ void SystemManager::Update(){
     
     }
 
+
+SystemManager::~SystemManager() {
+    for (int i = 0; i < systems.size(); i++) {
+        delete systems[i];
+    }
+
+    for (int i = 0; i < actors.size(); i++) {
+        delete actors[i];
+    }
+}
+
 void SystemManager::AddActor(Actor* actor){
 
     if (std::find(actors.begin(), actors.end(), actor) != actors.end()){
@@ -46,26 +60,6 @@ void SystemManager::AddActor(Actor* actor){
     }
 
     actors.push_back(actor);
-
-    for(int i =0; i < systems.size(); i++){
-        auto req = systems[i]->GetRequirements();
-        auto comp = actor->GetComponents();
-        
-        for(int j = 0; j < comp.size(); j++){
-            for(int k=0;k<req.size();k++){
-                if(strcmp(req[k],comp[j])==0){
-                    req.erase(req.begin()+k);
-                    k--;
-                }
-            }
-        }
-
-        if (req.size()==0){
-            systems[i]->AddActor(*actor);
-        }
-
-    }
-
 }
 
 
@@ -80,10 +74,8 @@ void SystemManager::RemoveActor(Actor* actor) {
     actors.erase(it);
 
     for(int i =0; i < systems.size(); i++){
-        systems[i]->RemoveActor(*actor);
+        systems[i]->RemoveActor(actor);
     }
-
-    delete actor;
 }
 
 void SystemManager::AddSystem(System* system){
@@ -98,7 +90,7 @@ void SystemManager::RemoveSystem(System* system) {
     assert(it != systems.end() && "Error : Tried to remove a non-existent SYSTEM from the System Manager!");
 
     systems.erase(it);
-    delete &it;
+    delete system;
 }
 
 

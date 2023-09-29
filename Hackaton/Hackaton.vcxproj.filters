@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{a8b7419e-867f-41c4-be5e-7299b400a9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine\actors">
+      <UniqueIdentifier>{9227305e-aa8a-4692-806e-a8bb35faa278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{0b3e3e35-e769-4198-9e83-b25e2b76d539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\actors">
+      <UniqueIdentifier>{d416608d-9f36-4aeb-8b6c-ef24e0438508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine\system">
+      <UniqueIdentifier>{29d8ebce-531c-4a20-ae93-db20c2a73c18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\systems">
+      <UniqueIdentifier>{0882b8cc-c9a0-4083-a8ee-ce5721e10070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine\components">
+      <UniqueIdentifier>{a91b66ed-04be-496c-b83c-f7832183d9dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\components">
+      <UniqueIdentifier>{0198ef57-3dbf-4015-a113-23257ccacf2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine\util">
+      <UniqueIdentifier>{75bc2b81-5409-400a-9b0a-6920b1ab5626}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Hackaton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actor.cpp">
+      <Filter>Source Files\engine\actors</Filter>
+    </ClCompile>
+    <ClCompile Include="system_manager.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="position_component.cpp">
+      <Filter>Source Files\engine\components</Filter>
+    </ClCompile>
+    <ClCompile Include="physics_component.cpp">
+      <Filter>Source Files\engine\components</Filter>
+    </ClCompile>
+    <ClCompile Include="print_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="init_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="actor.h">
+      <Filter>Header Files\engine\actors</Filter>
+    </ClInclude>
+    <ClInclude Include="system_manager.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="position_component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="physics_component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="print_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files\engine\util</Filter>
+    </ClInclude>
+    <ClInclude Include="init_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
