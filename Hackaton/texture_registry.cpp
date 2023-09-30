@@ -13,7 +13,7 @@ void TextureRegistry::LoadImg(const char* path) {
 
 Texture2D TextureRegistry::GrabTexture(const char* path) {
 
-	if (textures.find(path) != textures.end()) {
+	if (textures.find(path) == textures.end()) {
 		TextureRegistry::getInstance()->LoadImg(path);
 	}
 	// TODO Add a recent textures folder that keeps the texture loaded to the gpu in case of instancing
