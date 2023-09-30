@@ -33,11 +33,11 @@ int main()
 
     while (!WindowShouldClose())
     {
-        SystemManager::getInstance()->Update();
+        
 
         BeginDrawing();
         ClearBackground(darkGreen);
-
+        SystemManager::getInstance()->Update();
         BeginMode3D(camera);
 
         // Draw 3D

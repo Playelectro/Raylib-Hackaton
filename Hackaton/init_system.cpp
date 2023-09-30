@@ -1,25 +1,28 @@
 #include "init_system.h"
-#include "position_component.h"
-#include "print_system.h"
-#include "system_manager.h"
 
-void SpawnTest() {
-    Actor* actor = new Actor();
 
+void InitUi()
+{
     PositionComponent* component = new PositionComponent(Vector3{ 0,0,0 });
 
-    actor->AddComponent(component);
+    MenuButton* menuButton = new MenuButton(50, 42);
 
-    PrintSystem* system = new PrintSystem();
+    Actor* actor = new Actor();
+
+    actor->AddComponent(component);
+    actor->AddComponent(menuButton);
+
+    ButtonMenuSystem* system = new ButtonMenuSystem();
 
     SystemManager::getInstance()->AddSystem(system);
-
     SystemManager::getInstance()->AddActor(actor);
+
 }
 
 void InitSystem::doLogic() {
 
-    SpawnTest();
+
+    InitUi();
 
     // Remove self after implementing begining
     SystemManager::getInstance()->RemoveSystem(this);

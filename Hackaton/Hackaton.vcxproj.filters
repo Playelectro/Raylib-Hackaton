@@ -66,6 +66,9 @@
     <ClCompile Include="init_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
+    <ClCompile Include="button_menu_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -94,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="init_system.h">
       <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="button_menu_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="menu_button.h">
+      <Filter>Header Files\engine\components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
