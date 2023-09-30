@@ -3,6 +3,7 @@
 #include "system_manager.h"
 #include "position_component.h"
 #include "menu_button.h"
+#include "texture_registry.h"
 
 
 class ButtonMenuSystem : public System

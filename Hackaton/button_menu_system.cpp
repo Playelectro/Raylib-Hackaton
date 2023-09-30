@@ -7,7 +7,13 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	PositionComponent* button_poz = actors[current]->GetComponent<PositionComponent>();
 	MenuButton* button_wh = actors[current]->GetComponent<MenuButton>();
 
-	DrawRectangle(button_poz->transform.translation.x, button_poz->transform.translation.y, button_wh->width, button_wh->height, Color{255,0,0,255});
+	Texture2D buton = TextureRegistry::getInstance()->GrabTexture("buton");
+
+	//SetShapesTexture(buton, Rectangle{ 0,0,32,32 });
+
+	//DrawRectangle(button_poz->transform.translation.x, button_poz->transform.translation.y, button_wh->width, button_wh->height, buton);
+
+	DrawTexture(buton, button_poz->transform.translation.x, button_poz->transform.translation.y, Color{ 0,0,0,0 });
 
 	if (IsMouseButtonPressed(0))
 	{
