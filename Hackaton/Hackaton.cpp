@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include "system_manager.h"
 #include "init_system.h"
+#include "texture_registry.h"
 
 int main()
 {
@@ -28,16 +29,18 @@ int main()
 
     InitSystem* system = new InitSystem();
 
-
     SystemManager::getInstance()->AddSystem(system);
+
+    TextureRegistry::getInstance();
 
     while (!WindowShouldClose())
     {
-        
-
+  
         BeginDrawing();
         ClearBackground(darkGreen);
+
         SystemManager::getInstance()->Update();
+        
         BeginMode3D(camera);
 
         // Draw 3D
