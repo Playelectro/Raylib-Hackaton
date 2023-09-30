@@ -63,9 +63,6 @@
     <ClCompile Include="position_component.cpp">
       <Filter>Source Files\engine\components</Filter>
     </ClCompile>
-    <ClCompile Include="physics_component.cpp">
-      <Filter>Source Files\engine\components</Filter>
-    </ClCompile>
     <ClCompile Include="init_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>

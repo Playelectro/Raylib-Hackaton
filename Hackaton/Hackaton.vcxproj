@@ -131,7 +131,6 @@
     <ClCompile Include="button_menu_system.cpp" />
     <ClCompile Include="Hackaton.cpp" />
     <ClCompile Include="init_system.cpp" />
-    <ClCompile Include="physics_component.cpp" />
     <ClCompile Include="position_component.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="system_manager.cpp" />
