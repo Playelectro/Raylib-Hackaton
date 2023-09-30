@@ -6,7 +6,6 @@ void TextureRegistry::LoadImg(const char* path) {
 	std::string path_m = std::string(path);
 
 	Texture2D pot = LoadTexture(path_m.append(".png").c_str());
-
 	
 	textures[path] = pot;
 }

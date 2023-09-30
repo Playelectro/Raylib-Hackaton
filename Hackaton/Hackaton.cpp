@@ -31,8 +31,6 @@ int main()
 
     SystemManager::getInstance()->AddSystem(system);
 
-    TextureRegistry::getInstance();
-
     while (!WindowShouldClose())
     {
   
@@ -40,9 +38,8 @@ int main()
         ClearBackground(darkGreen);
 
         SystemManager::getInstance()->Update();
-        
-        BeginMode3D(camera);
 
+        BeginMode3D(camera);
         // Draw 3D
 
 

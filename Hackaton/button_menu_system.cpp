@@ -5,7 +5,7 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	Vector2 mousePosition = GetMousePosition();
 
 	PositionComponent* button_poz = actors[current]->GetComponent<PositionComponent>();
-	MenuButton* button_wh = actors[current]->GetComponent<MenuButton>();
+	MenuButton* button_info = actors[current]->GetComponent<MenuButton>();
 
 	Texture2D buton = TextureRegistry::getInstance()->GrabTexture("buton");
 	Texture2D buton_neapasat = TextureRegistry::getInstance()->GrabTexture("buton_neapasat");
@@ -14,17 +14,15 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 
 	//DrawRectangle(button_poz->transform.translation.x, button_poz->transform.translation.y, button_wh->width, button_wh->height, Color{ 255,255,255,255 });
 
-	DrawTexture(buton, button_poz->transform.translation.x, button_poz->transform.translation.y, Color{ 255,255,255,255 });
+	DrawTextureEx(buton, Vector2{ button_poz->transform.translation.x, button_poz->transform.translation.y}, 0, (GetScreenWidth()+ button_info->width)/ (GetScreenHeight() + button_info->height), Color{ 255,255,255,255 });
 
 	if (IsMouseButtonPressed(0))
 	{
-		
 
-		Rectangle button_rectangle = { button_poz->transform.translation.x, button_poz->transform.translation.y, button_wh->width, button_wh->height };
+		Rectangle button_rectangle = { button_poz->transform.translation.x, button_poz->transform.translation.y, button_info->width, button_info->height };
 		if (CheckCollisionPointRec(mousePosition, button_rectangle))
 		{
-			std::cout << "Am fost apasat";
-
+			button_info->onClick(actors[current]);
 		}
 	}
 
