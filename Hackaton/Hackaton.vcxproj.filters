@@ -40,11 +40,19 @@
     <Filter Include="Header Files\engine\util">
       <UniqueIdentifier>{75bc2b81-5409-400a-9b0a-6920b1ab5626}</UniqueIdentifier>
     </Filter>
+<<<<<<< Updated upstream
     <Filter Include="Resource Files\textures">
       <UniqueIdentifier>{c9f2e05f-71e6-4ff4-bb08-4a8059b1288f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files\models">
       <UniqueIdentifier>{7aca999c-53ec-44f9-aadb-e85ec1827c9b}</UniqueIdentifier>
+=======
+    <Filter Include="Header Files\engine\States">
+      <UniqueIdentifier>{9872a671-f629-42ac-9f09-a5c52615d1bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\states">
+      <UniqueIdentifier>{d4287060-d7a7-45cf-809b-4c118a77ae0c}</UniqueIdentifier>
+>>>>>>> Stashed changes
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,11 +83,22 @@
     <ClCompile Include="model_registry.cpp">
       <Filter>Source Files\engine\util</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="sprite_component.h">
       <Filter>Header Files\engine\components</Filter>
     </ClCompile>
     <ClCompile Include="sprite_renderer_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
+=======
+    <ClCompile Include="app_state.cpp">
+      <Filter>Source Files\engine\states</Filter>
+    </ClCompile>
+    <ClCompile Include="context_state.cpp">
+      <Filter>Source Files\engine\states</Filter>
+    </ClCompile>
+    <ClCompile Include="context_state2.cpp">
+      <Filter>Source Files</Filter>
+>>>>>>> Stashed changes
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,8 +141,22 @@
     <ClInclude Include="model_registry.h">
       <Filter>Header Files\engine\util</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="sprite_renderer_system.h">
       <Filter>Header Files\engine\system</Filter>
+=======
+    <ClInclude Include="app_state.h">
+      <Filter>Header Files\engine\States</Filter>
+    </ClInclude>
+    <ClInclude Include="concrete_state1.h">
+      <Filter>Header Files\engine\States</Filter>
+    </ClInclude>
+    <ClInclude Include="concrete_state2.h">
+      <Filter>Header Files\engine\States</Filter>
+    </ClInclude>
+    <ClInclude Include="context_state.h">
+      <Filter>Header Files\engine\States</Filter>
+>>>>>>> Stashed changes
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -138,8 +171,14 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <None Include="earth.glb">
       <Filter>Resource Files\models</Filter>
     </None>
+=======
+    <ResourceCompile Include="Hackaton.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+>>>>>>> Stashed changes
   </ItemGroup>
 </Project>
