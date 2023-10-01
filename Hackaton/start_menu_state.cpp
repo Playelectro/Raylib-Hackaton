@@ -8,7 +8,7 @@ void StartMenuState::InitState() {
 	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	SpriteComponent* sprite;
-	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("SIMA1"));
+	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("SIMA"));
 
 	actor->AddComponent(position);
 
@@ -20,7 +20,7 @@ void StartMenuState::InitState() {
 	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 2.5, buttonWidth, buttonHeight, "Simulate","buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new SimulationState());
 		ContextState::getInstance()->InitState();
-		});
+	});
 
 	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 1.5, buttonWidth, buttonHeight, "Learn","buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new LearningState());

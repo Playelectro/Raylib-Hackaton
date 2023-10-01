@@ -15,8 +15,10 @@ void LearningState::InitState(){
 
 	actor->AddComponent(sprite);
 
+
 	SystemManager::getInstance()->AddActor(actor);
 
+	
 	float buttonWidth = 200, buttonHeight = 100;
 	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 2.5, buttonWidth, buttonHeight, "Simulate", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new SimulationState());
