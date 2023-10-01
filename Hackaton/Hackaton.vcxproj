@@ -131,7 +131,6 @@
     <ClCompile Include="button_menu_system.cpp" />
     <ClCompile Include="context_state.cpp" />
     <ClCompile Include="Hackaton.cpp" />
-    <ClCompile Include="init_system.cpp" />
     <ClCompile Include="model_registry.cpp" />
     <ClCompile Include="physics_system.cpp" />
     <ClCompile Include="simulation_state.cpp" />
@@ -151,7 +150,6 @@
     <ClInclude Include="learning_state.h" />
     <ClInclude Include="context_state.h" />
     <ClInclude Include="menu_button.h" />
-    <ClInclude Include="init_system.h" />
     <ClInclude Include="model_registry.h" />
     <ClInclude Include="physics_component.h" />
     <ClInclude Include="physics_system.h" />

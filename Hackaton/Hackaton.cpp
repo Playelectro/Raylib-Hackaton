@@ -1,6 +1,5 @@
 #include <raylib.h>
 #include "system_manager.h"
-#include "init_system.h"
 #include "texture_registry.h"
 #include "context_state.h"
 #include "start_menu_states.h"
@@ -17,7 +16,7 @@ int main()
  
 
     // Init window
-    InitWindow(screenWidth, screenHeight, "Base Application");
+    InitWindow(screenWidth, screenHeight, "SIMA");
     SetWindowState(FLAG_FULLSCREEN_MODE);
     SetTargetFPS(60);
 

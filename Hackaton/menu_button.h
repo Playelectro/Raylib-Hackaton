@@ -10,10 +10,13 @@ public:
 
 	std::function<void(Actor*)> onClick;
 
+	std::string text;
 
-	MenuButtonComponent(std::function<void(Actor*)> lambda)
+
+	MenuButtonComponent(std::string text, std::function<void(Actor*)> lambda)
 	{
 		this->onClick = lambda;
+		this->text = text;
 	}
 
 };

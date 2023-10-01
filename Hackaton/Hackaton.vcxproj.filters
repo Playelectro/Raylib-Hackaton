@@ -66,9 +66,6 @@
     <ClCompile Include="system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
-    <ClCompile Include="init_system.cpp">
-      <Filter>Source Files\engine\systems</Filter>
-    </ClCompile>
     <ClCompile Include="button_menu_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
@@ -118,9 +115,6 @@
     </ClInclude>
     <ClInclude Include="util.h">
       <Filter>Header Files\engine\util</Filter>
-    </ClInclude>
-    <ClInclude Include="init_system.h">
-      <Filter>Header Files\engine\system</Filter>
     </ClInclude>
     <ClInclude Include="button_menu_system.h">
       <Filter>Header Files\engine\system</Filter>
