@@ -7,7 +7,7 @@
 class PhysicsSystem : public System {
 public:
 
-	const float G = 6.67 * (1 / 100000000000); //aici pc-ul incepe sa planga :( (gata smecheria)
+	const float G = 6.67 * (1 / 100000000000); //aici pc-ul incepe sa planga :( (gata smecheria) sa dus
 
 	PhysicsSystem() {
 		requirements.push_back(typeid(PositionComponent).name());
