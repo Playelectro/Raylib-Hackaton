@@ -17,7 +17,7 @@ void PhysicsSystem::doLogic(std::vector<Actor*> actors, int current) {
 
 		float force = G * actor_pshysics_a->mass * actor_pshysics_b->mass / (distance * distance);
 
-		Vector3 vector = toScalarVector(subtractVectors(actor_pshysics_a->velocity, actor_pshysics_b->velocity), 1 / distance);
+		Vector3 vector = toScalarVector(subtractVectors(actor_position_a->transform.translation, actor_position_b->transform.translation), 1 / distance);
 
 		vector = toScalarVector(vector, force);
 
@@ -25,4 +25,24 @@ void PhysicsSystem::doLogic(std::vector<Actor*> actors, int current) {
 	}
 
 	actor_pshysics_a->velocity = rez;
+
+	rez = addVectors(actor_position_a->transform.translation, toScalarVector(rez, GetFrameTime()));
+
+	bool isColliding = false;
+
+	for (int i = 0; i < actors.size(); i++) {
+		PositionComponent* actor_position_b = actors[i]->GetComponent<PositionComponent>();
+
+		PhysicsComponent* actor_pshysics_b = actors[i]->GetComponent<PhysicsComponent>();
+
+		if (distanceVectors(rez, actor_position_b->transform.translation) < (actor_pshysics_a->radius + actor_pshysics_b->radius)) {
+			isColliding = true;
+			break;
+		}
+	}
+
+	if (!isColliding) {
+		actor_position_a->transform.translation = rez;
+	}
+
 }
