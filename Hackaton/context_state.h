@@ -1,7 +1,7 @@
 #pragma once
 #include "app_state.h"
 #include "system_manager.h"
-/// aici alege pe care crd
+
 class ContextState{
 private: 
 	AppState* currentstate;

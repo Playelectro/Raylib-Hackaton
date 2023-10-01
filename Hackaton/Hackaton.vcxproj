@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
+    <ClCompile Include="app_state.cpp" />
     <ClCompile Include="button_menu_system.cpp" />
     <ClCompile Include="context_state.cpp" />
     <ClCompile Include="Hackaton.cpp" />
@@ -167,6 +168,7 @@
     <Image Include="buton.png" />
     <Image Include="play_button.png" />
     <Image Include="default.png" />
+    <Image Include="SIMA.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="earth.glb" />

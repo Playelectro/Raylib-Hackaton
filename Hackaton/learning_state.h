@@ -6,7 +6,7 @@ class LearningState : public AppState{
 public:
 	void InitState() override
 	{
-		///instructiune
+		
 	}
 
 };
