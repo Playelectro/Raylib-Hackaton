@@ -132,6 +132,7 @@
     <ClCompile Include="button_menu_system.cpp" />
     <ClCompile Include="context_state.cpp" />
     <ClCompile Include="Hackaton.cpp" />
+    <ClCompile Include="learning_state.cpp" />
     <ClCompile Include="model_registry.cpp" />
     <ClCompile Include="physics_system.cpp" />
     <ClCompile Include="simulation_state.cpp" />
@@ -169,6 +170,7 @@
     <Image Include="play_button.png" />
     <Image Include="default.png" />
     <Image Include="SIMA.png" />
+    <Image Include="SIMA1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="earth.glb" />
