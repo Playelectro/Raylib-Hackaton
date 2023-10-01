@@ -42,6 +42,7 @@ class SystemManager{
         void RemoveSystem(System*);
 
         void Update();
+        void CleanSystem();
 
         ~SystemManager();
 

@@ -129,20 +129,26 @@
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
     <ClCompile Include="button_menu_system.cpp" />
+    <ClCompile Include="context_state.cpp" />
     <ClCompile Include="Hackaton.cpp" />
     <ClCompile Include="init_system.cpp" />
     <ClCompile Include="model_registry.cpp" />
     <ClCompile Include="physics_system.cpp" />
     <ClCompile Include="sprite_component.h" />
     <ClCompile Include="sprite_renderer_system.cpp" />
+    <ClCompile Include="start_menu_state.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="system_manager.cpp" />
     <ClCompile Include="texture_registry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
+    <ClInclude Include="app_state.h" />
     <ClInclude Include="button_menu_system.h" />
     <ClInclude Include="component.h" />
+    <ClInclude Include="simulation_state.h" />
+    <ClInclude Include="learning_state.h" />
+    <ClInclude Include="context_state.h" />
     <ClInclude Include="menu_button.h" />
     <ClInclude Include="init_system.h" />
     <ClInclude Include="model_registry.h" />
@@ -150,9 +156,11 @@
     <ClInclude Include="physics_system.h" />
     <ClInclude Include="position_component.h" />
     <ClInclude Include="sprite_renderer_system.h" />
+    <ClInclude Include="start_menu_states.h" />
     <ClInclude Include="system.h" />
     <ClInclude Include="system_manager.h" />
     <ClInclude Include="texture_registry.h" />
+    <ClInclude Include="ui_util.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>

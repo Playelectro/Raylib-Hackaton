@@ -46,6 +46,12 @@
     <Filter Include="Resource Files\models">
       <UniqueIdentifier>{7aca999c-53ec-44f9-aadb-e85ec1827c9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\engine\states">
+      <UniqueIdentifier>{84125eb9-6eef-4d90-982c-bdcbc0701ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\states">
+      <UniqueIdentifier>{402f08aa-712d-4d7c-b297-0a0df9576bd9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Hackaton.cpp">
@@ -80,6 +86,12 @@
     </ClCompile>
     <ClCompile Include="sprite_renderer_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="start_menu_state.cpp">
+      <Filter>Source Files\engine\states</Filter>
+    </ClCompile>
+    <ClCompile Include="context_state.cpp">
+      <Filter>Source Files\engine\states</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +136,24 @@
     </ClInclude>
     <ClInclude Include="sprite_renderer_system.h">
       <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="app_state.h">
+      <Filter>Header Files\engine\states</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation_state.h">
+      <Filter>Header Files\engine\states</Filter>
+    </ClInclude>
+    <ClInclude Include="learning_state.h">
+      <Filter>Header Files\engine\states</Filter>
+    </ClInclude>
+    <ClInclude Include="context_state.h">
+      <Filter>Header Files\engine\states</Filter>
+    </ClInclude>
+    <ClInclude Include="start_menu_states.h">
+      <Filter>Header Files\engine\states</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_util.h">
+      <Filter>Header Files\engine\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

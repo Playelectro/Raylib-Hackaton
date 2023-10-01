@@ -2,6 +2,7 @@
 #include <raylib.h>
 #include "component.h"
 #include <functional>
+#include "actor.h"
 
 class MenuButtonComponent : public Component
 {

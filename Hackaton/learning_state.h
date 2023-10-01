@@ -2,9 +2,9 @@
 #include "app_state.h"
 
 /// aici ar fi a doua varianta
-class ContextState2 : public AppState{
+class LearningState : public AppState{
 public:
-	void state() override
+	void InitState() override
 	{
 		///instructiune
 	}

@@ -2,6 +2,8 @@
 #include "system_manager.h"
 #include "init_system.h"
 #include "texture_registry.h"
+#include "context_state.h"
+#include "start_menu_states.h"
 
 int main()
 {
@@ -27,9 +29,8 @@ int main()
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
 
-    InitSystem* system = new InitSystem();
-
-    SystemManager::getInstance()->AddSystem(system);
+    ContextState::getInstance()->SetState(new StartMenuState());
+    ContextState::getInstance()->InitState();
 
     while (!WindowShouldClose())
     {

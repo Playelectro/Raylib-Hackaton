@@ -1,22 +1,38 @@
 #pragma once
 #include "app_state.h"
-#include "concrete_state1.h"
-#include "concrete_state2.h"
-#include "context_state.h"
-
+#include "system_manager.h"
 /// aici alege pe care crd
 class ContextState{
 private: 
 	AppState* currentstate;
+    ContextState() {}
+    static ContextState* instancePtr;
 
 public:
-	ContextState() { currentstate = new ConcreteState1(); }
+    ContextState(const ContextState& obj) = delete;
 
-	void setstate(AppState* state1)
+    static ContextState* getInstance()
+    {
+        if (instancePtr == NULL)
+        {
+            instancePtr = new ContextState();
+            return instancePtr;
+        }
+        else
+        {
+            return instancePtr;
+        }
+    }
+
+	void SetState(AppState* state1)
 	{
+        delete currentstate;
 		currentstate = state1;
-
 	}
-	void state() { currentstate->state(); }
-};
+	void InitState(){ 
+        SystemManager::getInstance()->CleanSystem();
+    
+        currentstate->InitState(); 
+    }
 
+};

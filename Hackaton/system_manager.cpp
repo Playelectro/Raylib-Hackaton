@@ -40,7 +40,15 @@ void SystemManager::Update(){
             UpdateSystems();
     
     }
+void SystemManager::CleanSystem() {
+    for (int i = 0; i < systems.size(); i++) {
+        RemoveSystem(systems[i]);
+    }
 
+    for (int i = 0; i < actors.size(); i++) {
+        RemoveActor(actors[i]);
+    }
+}
 
 SystemManager::~SystemManager() {
     for (int i = 0; i < systems.size(); i++) {
