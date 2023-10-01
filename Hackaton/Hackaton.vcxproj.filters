@@ -93,9 +93,6 @@
     <ClCompile Include="simulation_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
-    <ClCompile Include="app_state.cpp">
-      <Filter>Source Files\engine\states</Filter>
-    </ClCompile>
     <ClCompile Include="learning_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>

@@ -12,7 +12,7 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	Rectangle button_rectangle = { button_poz->transform.translation.x, button_poz->transform.translation.y, button_poz->transform.scale.x, button_poz->transform.scale.y };
 	
 
-	int fontSize = button_poz->transform.scale.x / button_poz->transform.scale.y * 20;
+	int fontSize = button_poz->transform.scale.x * button_poz->transform.scale.y / 500;
 
 	int size = MeasureText(button_info->text.c_str(), fontSize);
 

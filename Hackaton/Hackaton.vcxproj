@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
-    <ClCompile Include="app_state.cpp" />
     <ClCompile Include="button_menu_system.cpp" />
     <ClCompile Include="context_state.cpp" />
     <ClCompile Include="Hackaton.cpp" />

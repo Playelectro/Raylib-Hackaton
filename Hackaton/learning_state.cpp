@@ -1,12 +1,4 @@
-#include "actor.h"
-#include "position_component.h"
-#include "sprite_component.h"
-#include "system_manager.h"
-#include "texture_registry.h"
 #include "learning_state.h"
-#include "sprite_renderer_system.h"
-#include "context_state.h"
-#include "simulation_state.h"
 
 void LearningState::InitState(){
 
@@ -35,5 +27,15 @@ void LearningState::InitState(){
 		ContextState::getInstance()->SetState(new LearningState());
 		ContextState::getInstance()->InitState();
 		});
+
+	
+	SpriteRendererSystem* renderer = new SpriteRendererSystem();
+
+	SystemManager::getInstance()->AddSystem(renderer);
+
+	ButtonMenuSystem* system = new ButtonMenuSystem();
+
+	SystemManager::getInstance()->AddSystem(system);
+
 
 }
