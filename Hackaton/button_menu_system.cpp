@@ -8,7 +8,9 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	MenuButtonComponent* button_info = actors[current]->GetComponent<MenuButtonComponent>();
 	SpriteComponent* sprite = actors[current]->GetComponent<SpriteComponent>();
 
-	Rectangle button_rectangle = { button_poz->transform.translation.x, button_poz->transform.translation.y, button_poz->transform.scale.x, button_poz->transform.scale.y };
+	float scale = (3.0f / 4.0f) * ((float)GetRenderWidth() / (float)GetRenderHeight());
+
+	Rectangle button_rectangle = { button_poz->transform.translation.x, button_poz->transform.translation.y, button_poz->transform.scale.x * scale, button_poz->transform.scale.y * scale };
 	
 	if (CheckCollisionPointRec(mousePosition, button_rectangle))
 	{
@@ -18,7 +20,6 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 		{
 			button_info->onClick(actors[current]);
 		}
-
 	}
 	else 
 	{
