@@ -40,7 +40,7 @@
     <Filter Include="Source Files\engine\util">
       <UniqueIdentifier>{e234f0ba-1757-456b-a5f0-344fa618a26a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\engine\system\util">
+    <Filter Include="Header Files\engine\util">
       <UniqueIdentifier>{75bc2b81-5409-400a-9b0a-6920b1ab5626}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -69,6 +69,12 @@
     <ClCompile Include="texture_registry.cpp">
       <Filter>Source Files\engine\util</Filter>
     </ClCompile>
+    <ClCompile Include="physics_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="model_registry.cpp">
+      <Filter>Source Files\engine\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -90,7 +96,7 @@
       <Filter>Header Files\engine\components</Filter>
     </ClInclude>
     <ClInclude Include="util.h">
-      <Filter>Header Files\engine\system\util</Filter>
+      <Filter>Header Files\engine\util</Filter>
     </ClInclude>
     <ClInclude Include="init_system.h">
       <Filter>Header Files\engine\system</Filter>
@@ -102,7 +108,24 @@
       <Filter>Header Files\engine\components</Filter>
     </ClInclude>
     <ClInclude Include="texture_registry.h">
-      <Filter>Header Files\engine\system\util</Filter>
+      <Filter>Header Files\engine\util</Filter>
     </ClInclude>
+    <ClInclude Include="physics_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="model_registry.h">
+      <Filter>Header Files\engine\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="buton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="buton_neapasat.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="default.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
