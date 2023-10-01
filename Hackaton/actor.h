@@ -13,6 +13,7 @@ class Actor{
 
     public:
     bool flagged = false;
+    bool markDeletion = false;
     int systems = 0;
 
     template<typename T>

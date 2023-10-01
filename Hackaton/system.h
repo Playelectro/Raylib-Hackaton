@@ -13,6 +13,7 @@ class System{
     
     public:
         bool active = true;
+        bool markDeletion = false;
 
         std::vector<const char*> GetRequirements(){
             return requirements;

@@ -3,31 +3,40 @@
 SystemManager* SystemManager::instancePtr = NULL;
 
 void SystemManager::Update(){
-            for(int l =0; l < actors.size(); l++){
-                 Actor* a = actors[l];
-        
-            if(a->flagged){
+    for (int i = 0; i < systems.size(); i++) {
+        if(systems[i]->markDeletion)
+            RemoveSystem(systems[i]);
+    }
 
-                for(int i =0; i < systems.size(); i++){
-                    auto req = systems[i]->GetRequirements();
-                    auto comp = a->GetComponents();
+    for(int l =0; l < actors.size(); l++){
+        if (actors[l]->markDeletion) {
+            RemoveActor(actors[l]);
+            continue;
+        }
+        Actor* a = actors[l];
+        
+        if(a->flagged){
+
+            for(int i =0; i < systems.size(); i++){
+                auto req = systems[i]->GetRequirements();
+                auto comp = a->GetComponents();
             
-                    for(int j = 0; j < comp.size(); j++){
-                        for(int k=0;k<req.size();k++){
+                for(int j = 0; j < comp.size(); j++){
+                    for(int k=0;k<req.size();k++){
                             
-                            if(req[k]==comp[j]){
-                                req.erase(req.begin()+k);
-                                k--;
-                            }
+                        if(req[k]==comp[j]){
+                            req.erase(req.begin()+k);
+                            k--;
                         }
                     }
+                }
 
                     if (req.size()==0){
                         a->systems += systems[i]->AddActor(a);
                     }else
                         a->systems -= systems[i]->RemoveActor(a);
 
-                }
+            }
 
                 a->flagged = false;
 
@@ -35,18 +44,19 @@ void SystemManager::Update(){
                     RemoveActor(a);
                 }
 
-            }
         }
-            UpdateSystems();
-    
     }
+    UpdateSystems();
+    
+}
+
 void SystemManager::CleanSystem() {
     for (int i = 0; i < systems.size(); i++) {
-        RemoveSystem(systems[i]);
+        systems[i]->markDeletion = true;
     }
 
     for (int i = 0; i < actors.size(); i++) {
-        RemoveActor(actors[i]);
+        actors[i]->markDeletion = true;
     }
 }
 

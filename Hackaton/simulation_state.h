@@ -7,7 +7,7 @@ class SimulationState : public AppState{
 public:
 	void InitState() override
 	{
-		
+		std::cout << "AM SCHIMBAT STATEUL: YEYEYEY";
 	}
 
 };
