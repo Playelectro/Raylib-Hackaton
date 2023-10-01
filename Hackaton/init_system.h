@@ -3,8 +3,9 @@
 #include "menu_button.h"
 #include "position_component.h"
 #include "system_manager.h"
-
+#include "sprite_renderer_system.h"
 #include "button_menu_system.h"
+#include "texture_registry.h"
 
 class InitSystem :public System
 {

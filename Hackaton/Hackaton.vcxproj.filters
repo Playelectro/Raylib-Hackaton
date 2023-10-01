@@ -34,14 +34,17 @@
     <Filter Include="Header Files\engine\components">
       <UniqueIdentifier>{a91b66ed-04be-496c-b83c-f7832183d9dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\engine\components">
-      <UniqueIdentifier>{0198ef57-3dbf-4015-a113-23257ccacf2d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\engine\util">
       <UniqueIdentifier>{e234f0ba-1757-456b-a5f0-344fa618a26a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\engine\util">
       <UniqueIdentifier>{75bc2b81-5409-400a-9b0a-6920b1ab5626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\textures">
+      <UniqueIdentifier>{c9f2e05f-71e6-4ff4-bb08-4a8059b1288f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\models">
+      <UniqueIdentifier>{7aca999c-53ec-44f9-aadb-e85ec1827c9b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,9 +60,6 @@
     <ClCompile Include="system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
-    <ClCompile Include="position_component.cpp">
-      <Filter>Source Files\engine\components</Filter>
-    </ClCompile>
     <ClCompile Include="init_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
@@ -74,6 +74,12 @@
     </ClCompile>
     <ClCompile Include="model_registry.cpp">
       <Filter>Source Files\engine\util</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite_component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite_renderer_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,16 +122,24 @@
     <ClInclude Include="model_registry.h">
       <Filter>Header Files\engine\util</Filter>
     </ClInclude>
+    <ClInclude Include="sprite_renderer_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="default.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
     <Image Include="buton.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\textures</Filter>
     </Image>
     <Image Include="buton_neapasat.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\textures</Filter>
     </Image>
-    <Image Include="default.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="earth.glb">
+      <Filter>Resource Files\models</Filter>
+    </None>
   </ItemGroup>
 </Project>
