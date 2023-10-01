@@ -163,8 +163,9 @@
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="buton_pressed.png" />
     <Image Include="buton.png" />
-    <Image Include="buton_neapasat.png" />
+    <Image Include="play_button.png" />
     <Image Include="default.png" />
   </ItemGroup>
   <ItemGroup>

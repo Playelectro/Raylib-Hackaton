@@ -157,10 +157,13 @@
     <Image Include="default.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
+    <Image Include="buton_pressed.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
     <Image Include="buton.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
-    <Image Include="buton_neapasat.png">
+    <Image Include="play_button.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
   </ItemGroup>

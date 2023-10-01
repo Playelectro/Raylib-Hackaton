@@ -6,13 +6,13 @@
 #include "sprite_component.h"
 #include "texture_registry.h"
 
-inline void CreateButton(float x, float y, float width, float height, std::string text, std::function<void(Actor*)> lambda)
+inline void CreateButton(float x, float y, float width, float height, std::string text, std::string texture, std::function<void(Actor*)> lambda)
 {
     PositionComponent* component = new PositionComponent(Vector3{ x,y,0 }, Vector3{ width, height, 0 });
 
-    MenuButtonComponent* menuButton = new MenuButtonComponent(text,lambda);
+    MenuButtonComponent* menuButton = new MenuButtonComponent(text,texture,lambda);
 
-    SpriteComponent* sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("buton_neapasat"));
+    SpriteComponent* sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(texture.c_str()));
 
     Actor* actor = new Actor();
 

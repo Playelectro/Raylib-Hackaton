@@ -12,11 +12,14 @@ public:
 
 	std::string text;
 
+	std::string texture;
 
-	MenuButtonComponent(std::string text, std::function<void(Actor*)> lambda)
+
+	MenuButtonComponent(std::string text, std::string texture,  std::function<void(Actor*)> lambda)
 	{
 		this->onClick = lambda;
 		this->text = text;
+		this->texture = texture;
 	}
 
 };

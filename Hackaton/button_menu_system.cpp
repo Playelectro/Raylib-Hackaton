@@ -20,7 +20,8 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	
 	if (CheckCollisionPointRec(mousePosition, button_rectangle))
 	{
-		sprite->texture = TextureRegistry::getInstance()->GrabTexture("buton");
+		std::string aux = button_info->texture;
+		sprite->texture = TextureRegistry::getInstance()->GrabTexture(aux.append("_pressed").c_str());
 		
 		if (IsMouseButtonPressed(0))
 		{
@@ -29,7 +30,7 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	}
 	else 
 	{
-		sprite->texture = TextureRegistry::getInstance()->GrabTexture("buton_neapasat");
+		sprite->texture = TextureRegistry::getInstance()->GrabTexture(button_info->texture.c_str());
 	}
 	
 }
