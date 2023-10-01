@@ -93,6 +93,9 @@
     <ClCompile Include="context_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
+    <ClCompile Include="simulation_state.cpp">
+      <Filter>Source Files\engine\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">

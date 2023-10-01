@@ -6,10 +6,8 @@
 class SpriteComponent : public Component {
 public:
 	Texture2D texture;
-	bool stretch = false;
 
-	SpriteComponent(Texture2D texture, bool stretch) {
+	SpriteComponent(Texture2D texture) {
 		this->texture = texture;
-		this->stretch = stretch;
 	}
 };

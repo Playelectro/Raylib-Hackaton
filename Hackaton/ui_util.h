@@ -12,7 +12,7 @@ inline void CreateButton(float x, float y, float width, float height, std::funct
 
     MenuButtonComponent* menuButton = new MenuButtonComponent(lambda);
 
-    SpriteComponent* sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("buton_neapasat"), true);
+    SpriteComponent* sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("buton_neapasat"));
 
     Actor* actor = new Actor();
 

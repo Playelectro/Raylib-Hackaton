@@ -134,6 +134,7 @@
     <ClCompile Include="init_system.cpp" />
     <ClCompile Include="model_registry.cpp" />
     <ClCompile Include="physics_system.cpp" />
+    <ClCompile Include="simulation_state.cpp" />
     <ClCompile Include="sprite_component.h" />
     <ClCompile Include="sprite_renderer_system.cpp" />
     <ClCompile Include="start_menu_state.cpp" />
