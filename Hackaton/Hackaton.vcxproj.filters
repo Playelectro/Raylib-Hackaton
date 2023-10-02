@@ -99,6 +99,7 @@
     <ClCompile Include="model_renderer_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="planets_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
@@ -112,6 +113,9 @@
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
     <ClCompile Include="transition_state.cpp">
+=======
+    <ClCompile Include="test_state.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
   </ItemGroup>
@@ -176,6 +180,7 @@
     <ClInclude Include="model_renderer_system.h">
       <Filter>Header Files\engine\system</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="planets_state.h">
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
@@ -192,6 +197,9 @@
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
     <ClInclude Include="transition_state.h">
+=======
+    <ClInclude Include="test_state.h">
+>>>>>>> Stashed changes
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
   </ItemGroup>
@@ -211,12 +219,19 @@
     <Image Include="SIMA.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
+<<<<<<< Updated upstream
     <Image Include="cosmos.png">
+=======
+    <Image Include="textura.png">
+>>>>>>> Stashed changes
       <Filter>Resource Files\textures</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="earth.glb">
+      <Filter>Resource Files\models</Filter>
+    </None>
+    <None Include="planet2.gltf">
       <Filter>Resource Files\models</Filter>
     </None>
   </ItemGroup>
