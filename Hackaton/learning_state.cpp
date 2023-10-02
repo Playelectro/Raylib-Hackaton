@@ -9,7 +9,7 @@ void LearningState::InitState(){
 	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	SpriteComponent* sprite;
-	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("SIMA1"));
+	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("SIMA1"),0);
 
 	actor->AddComponent(position);
 

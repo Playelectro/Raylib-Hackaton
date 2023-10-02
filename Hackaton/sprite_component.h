@@ -7,7 +7,10 @@ class SpriteComponent : public Component {
 public:
 	Texture2D texture;
 
-	SpriteComponent(Texture2D texture) {
+	int z_order = 0;
+
+	SpriteComponent(Texture2D texture, int z_order) {
 		this->texture = texture;
+		this->z_order = z_order;
 	}
 };

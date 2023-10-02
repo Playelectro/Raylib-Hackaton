@@ -6,9 +6,8 @@
 #include "actor.h"
 
 class System{
-    private:
-        std::vector<Actor*> actors;
     protected:
+        std::vector<Actor*> actors;
         std::vector<const char*> requirements;
     
     public:
@@ -23,7 +22,7 @@ class System{
 
         bool RemoveActor(Actor* actor);
 
-        void Update() {
+        virtual void Update() {
             for (int i = 0; i < actors.size(); i++) {
                 doLogic(actors, i);
             }
