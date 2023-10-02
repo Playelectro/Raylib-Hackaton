@@ -18,11 +18,11 @@ void SimulationState::InitState() {
 
 	SystemManager::getInstance()->AddActor(actor);
 
-		CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, " ", "button_play", [](Actor* actor)
+		CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "buton", [](Actor* actor)
 		{
 				std::cout << "am fost apasat";
 		});
-		CreateButton(GetScreenWidth() / 2 - buttonWidthSq / 2, GetScreenHeight() / 2, buttonWidthSq, buttonHeightSq, " ", "buton_planeta", [](Actor* actor2)
+		CreateButton(GetScreenWidth() / 2 - buttonWidthSq / 2, GetScreenHeight() / 2, buttonWidthSq, buttonHeightSq, "", "buton_planeta", [](Actor* actor2)
 		{
 				std::cout << "am fost apasat";
 		});

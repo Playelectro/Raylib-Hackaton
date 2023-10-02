@@ -187,10 +187,6 @@
     <Image Include="SIMA.png" />
     <Image Include="textura.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="earth.glb" />
-    <None Include="planet2.gltf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
