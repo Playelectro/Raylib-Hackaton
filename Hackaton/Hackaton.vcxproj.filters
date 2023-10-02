@@ -96,6 +96,9 @@
     <ClCompile Include="learning_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
+    <ClCompile Include="model_renderer_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -155,6 +158,12 @@
     <ClInclude Include="ui_util.h">
       <Filter>Header Files\engine\util</Filter>
     </ClInclude>
+    <ClInclude Include="model_component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="model_renderer_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="default.png">
@@ -169,6 +178,7 @@
     <Image Include="SIMA.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
+<<<<<<< HEAD
     <Image Include="SIMA1.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
@@ -190,6 +200,8 @@
     <Image Include="buton_planeta.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
+=======
+>>>>>>> fda281ec8613c11d1221da109ba3d856e47dda16
   </ItemGroup>
   <ItemGroup>
     <None Include="earth.glb">
