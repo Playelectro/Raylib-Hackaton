@@ -62,5 +62,4 @@ void LearningState::InitState(){
 	ButtonMenuSystem* system = new ButtonMenuSystem();
 
 	SystemManager::getInstance()->AddSystem(system);
-
 }

@@ -17,6 +17,12 @@ void SatelitiArtificiali::InitState() {
 
 	SystemManager::getInstance()->AddActor(actor);
 
+	float buttonWidth = 100, buttonHeight = 50;
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Back", "buton", [](Actor* actor) {
+		ContextState::getInstance()->SetState(new Sateliti());
+		ContextState::getInstance()->InitState();
+		});
+
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
 	SystemManager::getInstance()->AddSystem(renderer);

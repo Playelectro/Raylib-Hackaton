@@ -111,6 +111,9 @@
     <ClCompile Include="sateliti_naturali.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
+    <ClCompile Include="transition_state.cpp">
+      <Filter>Source Files\engine\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -186,6 +189,9 @@
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
     <ClInclude Include="sateliti.h">
+      <Filter>Header Files\engine\states</Filter>
+    </ClInclude>
+    <ClInclude Include="transition_state.h">
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
   </ItemGroup>

@@ -30,6 +30,11 @@ void Sateliti::InitState() {
 		ContextState::getInstance()->InitState();
 		});
 
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Back", "buton", [](Actor* actor) {
+		ContextState::getInstance()->SetState(new LearningState());
+		ContextState::getInstance()->InitState();
+		});
+
 	SystemManager::getInstance()->AddActor(actor);
 
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();

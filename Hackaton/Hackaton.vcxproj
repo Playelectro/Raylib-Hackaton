@@ -146,6 +146,7 @@
     <ClCompile Include="system.cpp" />
     <ClCompile Include="system_manager.cpp" />
     <ClCompile Include="texture_registry.cpp" />
+    <ClCompile Include="transition_state.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="system.h" />
     <ClInclude Include="system_manager.h" />
     <ClInclude Include="texture_registry.h" />
+    <ClInclude Include="transition_state.h" />
     <ClInclude Include="ui_util.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>

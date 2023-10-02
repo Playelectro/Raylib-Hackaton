@@ -19,6 +19,12 @@ void PlanetState::InitState() {
 
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
+	float buttonWidth = 100, buttonHeight = 50;
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Back", "buton", [](Actor* actor) {
+		ContextState::getInstance()->SetState(new LearningState());
+		ContextState::getInstance()->InitState();
+		});
+
 	SystemManager::getInstance()->AddSystem(renderer);
 
 	ButtonMenuSystem* system = new ButtonMenuSystem();
