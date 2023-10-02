@@ -135,6 +135,10 @@
     <ClCompile Include="model_registry.cpp" />
     <ClCompile Include="model_renderer_system.cpp" />
     <ClCompile Include="physics_system.cpp" />
+    <ClCompile Include="planets_state.cpp" />
+    <ClCompile Include="sateliti_naturali.cpp" />
+    <ClCompile Include="sateliti.cpp" />
+    <ClCompile Include="sateliti_artificiali.cpp" />
     <ClCompile Include="simulation_state.cpp" />
     <ClCompile Include="sprite_component.h" />
     <ClCompile Include="sprite_renderer_system.cpp" />
@@ -150,6 +154,10 @@
     <ClInclude Include="component.h" />
     <ClInclude Include="model_component.h" />
     <ClInclude Include="model_renderer_system.h" />
+    <ClInclude Include="planets_state.h" />
+    <ClInclude Include="sateliti.h" />
+    <ClInclude Include="sateliti_naturali.h" />
+    <ClInclude Include="sateliti_artificiali.h" />
     <ClInclude Include="simulation_state.h" />
     <ClInclude Include="learning_state.h" />
     <ClInclude Include="context_state.h" />
@@ -169,6 +177,7 @@
   <ItemGroup>
     <Image Include="buton_pressed.png" />
     <Image Include="buton.png" />
+    <Image Include="cosmos.png" />
     <Image Include="play_button.png" />
     <Image Include="default.png" />
     <Image Include="SIMA.png" />
