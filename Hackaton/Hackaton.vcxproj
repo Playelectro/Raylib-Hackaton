@@ -164,9 +164,13 @@
     <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="button_play_pressed.png" />
     <Image Include="buton_pressed.png" />
     <Image Include="buton.png" />
-    <Image Include="play_button.png" />
+    <Image Include="button_play.png" />
+    <Image Include="buton_planeta_pressed.png" />
+    <Image Include="buton_planeta.png" />
+    <Image Include="space.png" />
     <Image Include="default.png" />
     <Image Include="SIMA.png" />
     <Image Include="SIMA1.png" />

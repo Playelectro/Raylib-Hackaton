@@ -166,13 +166,28 @@
     <Image Include="buton.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
-    <Image Include="play_button.png">
-      <Filter>Resource Files\textures</Filter>
-    </Image>
     <Image Include="SIMA.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
     <Image Include="SIMA1.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="button_play.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="space.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="buton_planeta_pressed.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="buton_planeta_pressed.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="button_play_pressed.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="buton_planeta.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
   </ItemGroup>

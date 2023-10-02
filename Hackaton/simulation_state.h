@@ -7,6 +7,7 @@
 #include "system_manager.h"
 #include "texture_registry.h"
 #include "sprite_renderer_system.h"
+#include "button_menu_system.h"
 
 /// aici ar fi prima varianta
 class SimulationState : public AppState{
