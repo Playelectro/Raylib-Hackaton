@@ -145,6 +145,7 @@
     <ClCompile Include="start_menu_state.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="system_manager.cpp" />
+    <ClCompile Include="test_state.cpp" />
     <ClCompile Include="texture_registry.cpp" />
     <ClCompile Include="transition_state.cpp" />
   </ItemGroup>
@@ -171,6 +172,7 @@
     <ClInclude Include="start_menu_states.h" />
     <ClInclude Include="system.h" />
     <ClInclude Include="system_manager.h" />
+    <ClInclude Include="test_state.h" />
     <ClInclude Include="texture_registry.h" />
     <ClInclude Include="transition_state.h" />
     <ClInclude Include="ui_util.h" />
@@ -183,9 +185,11 @@
     <Image Include="play_button.png" />
     <Image Include="default.png" />
     <Image Include="SIMA.png" />
+    <Image Include="textura.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="earth.glb" />
+    <None Include="planet2.gltf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

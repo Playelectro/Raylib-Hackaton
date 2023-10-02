@@ -3,6 +3,7 @@
 #include "texture_registry.h"
 #include "context_state.h"
 #include "start_menu_states.h"
+#include "test_state.h"
 
 int main()
 {
@@ -27,7 +28,7 @@ int main()
     // Init 3D camera
     
 
-    ContextState::getInstance()->SetState(new StartMenuState());
+    ContextState::getInstance()->SetState(new TestState());
     ContextState::getInstance()->InitState();
 
     while (!WindowShouldClose())
