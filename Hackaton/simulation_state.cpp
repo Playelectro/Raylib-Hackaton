@@ -20,7 +20,7 @@ void SimulationState::InitState() {
 	
 		CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [](Actor* actor2)
 		{
-				std::cout << "am fost apasat";
+
 		});
 		CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 			ContextState::getInstance()->RegressState();
