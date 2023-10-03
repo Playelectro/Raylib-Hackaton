@@ -12,6 +12,8 @@
 #include "model_renderer_system.h"
 #include "physics_system.h"
 #include "camera_component.h"
+#include "model_registry.h"
+#include "camera_controls_system.h"
 
 /// aici ar fi prima varianta
 class SimulationState : public AppState{

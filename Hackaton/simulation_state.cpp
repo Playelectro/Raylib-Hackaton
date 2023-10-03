@@ -23,9 +23,13 @@ void SimulationState::InitState() {
 	// ADD PLAYER CAMERA
 	Actor* player = new Actor();
 
-	CameraComponent* camera = new CameraComponent({ 0,0,0 }, {0,0,0},90.0f);
+	CameraComponent* camera = new CameraComponent({ -5, 2, 0}, {0,0,0},90.0f);
 
 	player->AddComponent(camera);
+
+	CameraControlsSystem* camera_control = new CameraControlsSystem();
+
+	SystemManager::getInstance()->AddSystem(camera_control);
 
 	SystemManager::getInstance()->AddActor(player);
 
@@ -65,6 +69,21 @@ void SimulationState::InitState() {
 			if(physics_system != nullptr)
 				physics_system->active = !physics_system;
 		});
+
+	Actor* actor1;
+	actor1 = new Actor();
+	
+
+	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
+	//ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel("RubberDuck_LOD0.obj"), TextureRegistry::getInstance()->GrabTexture("RubberDuck_AlbedoTransparency"));
+
+	PositionComponent* position2 = new PositionComponent(Vector3{ 0, 0, 0 });
+
+	actor1->AddComponent(model2);
+
+	actor1->AddComponent(position2);
+
+	SystemManager::getInstance()->AddActor(actor1);
 
 
 }
