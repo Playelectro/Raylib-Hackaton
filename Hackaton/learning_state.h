@@ -9,6 +9,8 @@
 #include "context_state.h"
 #include "simulation_state.h"
 #include "button_menu_system.h"
+#include "model_registry.h"
+#include "model_component.h"
 
 class LearningState : public AppState{
 public:

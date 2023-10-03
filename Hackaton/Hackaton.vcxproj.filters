@@ -114,6 +114,9 @@
     <ClCompile Include="transition_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
+    <ClCompile Include="spin_actor_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -193,6 +196,12 @@
     </ClInclude>
     <ClInclude Include="camera_component.h">
       <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="rotate_around_axis_component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="spin_actor_system.h">
+      <Filter>Header Files\engine\system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

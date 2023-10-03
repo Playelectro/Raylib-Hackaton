@@ -14,7 +14,6 @@ void PlanetState::InitState() {
 
 	actor->AddComponent(sprite);
 
-
 	SystemManager::getInstance()->AddActor(actor);
 
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
@@ -24,6 +23,12 @@ void PlanetState::InitState() {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});
+
+	actor = new Actor();
+
+	ModelComponent* model= new ModelComponent(ModelRegistry::getInstance()->GrabModel("RubberDuck_LOD0.obj"), TextureRegistry::getInstance()->GrabTexture("RubberDuck_AlbedoTransparency"));
+
+	position = new PositionComponent(Vector3{ 10, 0, 3 }, Quaternion{ 0.0, 1.0, 0.0, 3 }, Vector3{ 0.1,0.1,0.1 });
 
 	SystemManager::getInstance()->AddSystem(renderer);
 
