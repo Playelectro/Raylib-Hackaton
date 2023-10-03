@@ -2,19 +2,23 @@
 
 TextureRegistry* TextureRegistry::instancePtr = NULL;
 
-void TextureRegistry::LoadImg(const char* path) {
-	std::string path_m = std::string(path);
+void TextureRegistry::LoadImg(std::string path) {
 
-	Texture2D pot = LoadTexture(path_m.append(".png").c_str());
-	
-	textures[path] = pot;
+	std::string a = path;
+
+	Texture2D pot = LoadTexture(a.append(".png").c_str());
+
+	this->textures[path.c_str()] = pot;
 }
 
-Texture2D TextureRegistry::GrabTexture(const char* path) {
+Texture2D TextureRegistry::GrabTexture(std::string path) {
 
-	if (textures.find(path) == textures.end()) {
+
+	/// For some reason find has issues in comparing DONT KNOW WHY
+	if (this->textures.find(path) == this->textures.end()) {
 		TextureRegistry::getInstance()->LoadImg(path);
 	}
+
 	// TODO Add a recent textures folder that keeps the texture loaded to the gpu in case of instancing
-	return textures[path];
+	return this->textures[path];
 }

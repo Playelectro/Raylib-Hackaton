@@ -7,11 +7,11 @@
 class TextureRegistry {
 
 private:
-	std::unordered_map<const char*, Texture2D> textures;
+	std::unordered_map<std::string, Texture2D> textures;
 
 	static TextureRegistry* instancePtr;
 
-    void LoadImg(const char*);
+    void LoadImg(std::string);
 
 	TextureRegistry() {
         this->LoadImg("default");
@@ -33,5 +33,5 @@ public:
         }
     }
 
-    Texture2D GrabTexture(const char*);
+    Texture2D GrabTexture(std::string);
 };

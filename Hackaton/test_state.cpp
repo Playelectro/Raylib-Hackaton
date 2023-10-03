@@ -5,7 +5,7 @@ void TestState::InitState() {
 	Actor* actor;
 	actor = new Actor();
 
-	PhysicsComponent* physics = new PhysicsComponent(10000, 0.5, Vector3{0, 0, 0});
+	PhysicsComponent* physics = new PhysicsComponent(100, 0.5, Vector3{0, 2.1, 0});
 	
 	ModelComponent* model = new ModelComponent(ModelRegistry::getInstance()->GrabModel("RubberDuck_LOD0.obj"), TextureRegistry::getInstance()->GrabTexture("RubberDuck_AlbedoTransparency"));
 
@@ -27,7 +27,7 @@ void TestState::InitState() {
 
 	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 0.5, 20, 20), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position2 = new PositionComponent(Vector3{ 20, 0, -20 });
+	PositionComponent* position2 = new PositionComponent(Vector3{ 10, 0, -3 });
 
 	actor1->AddComponent(physics2);
 

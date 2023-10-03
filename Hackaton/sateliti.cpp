@@ -11,7 +11,7 @@ void Sateliti::InitState() {
 	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	SpriteComponent* sprite;
-	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("SIMA"), 0);
+	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(std::string("SIMA")), 0);
 
 	actor->AddComponent(position);
 

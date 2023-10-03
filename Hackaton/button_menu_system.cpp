@@ -14,12 +14,12 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 
 	int size = MeasureText(button_info->text.c_str(), button_info->font_size);
 
-	DrawText(button_info->text.c_str(), button_poz->transform.translation.x + (button_poz->transform.scale.x / 2) - size/2, button_poz->transform.translation.y + (button_poz->transform.scale.y / 4), button_info->font_size, WHITE);
+	DrawText(button_info->text.c_str(), button_poz->transform.translation.x + (button_poz->transform.scale.x / 2) - size/2, button_poz->transform.translation.y + (button_poz->transform.scale.y / 4), button_info->font_size, BLACK);
 	
 	if (CheckCollisionPointRec(mousePosition, button_rectangle))
 	{
-		std::string aux = button_info->texture;
-		sprite->texture = TextureRegistry::getInstance()->GrabTexture(aux.append("_pressed").c_str());
+
+		sprite->texture = TextureRegistry::getInstance()->GrabTexture(button_info->hover_texture.c_str());
 		
 		if (IsMouseButtonPressed(0))
 		{

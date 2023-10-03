@@ -8,7 +8,7 @@ void PlanetState::InitState() {
 	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	SpriteComponent* sprite;
-	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("cosmos"), 0);
+	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(std::string("cosmos")), 0);
 
 	actor->AddComponent(position);
 
@@ -20,8 +20,8 @@ void PlanetState::InitState() {
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
 	float buttonWidth = 100, buttonHeight = 50;
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Back", "buton", [](Actor* actor) {
-		ContextState::getInstance()->SetState(new LearningState());
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight,20, "Back", "button", [](Actor* actor) {
+		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});
 

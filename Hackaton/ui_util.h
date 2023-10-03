@@ -14,7 +14,6 @@ inline void CreateButton(float x, float y, float width, float height, std::strin
 
     SpriteComponent* sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(texture.c_str()),2);
 
-
     Actor* actor = new Actor();
 
     actor->AddComponent(component);

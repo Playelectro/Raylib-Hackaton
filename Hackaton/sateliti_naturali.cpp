@@ -9,7 +9,7 @@ void SatelitiNaturali::InitState() {
 	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	SpriteComponent* sprite;
-	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("SIMA"), 0);
+	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(std::string("SIMA")), 0);
 
 	actor->AddComponent(position);
 
@@ -18,8 +18,8 @@ void SatelitiNaturali::InitState() {
 	SystemManager::getInstance()->AddActor(actor);
 
 	float buttonWidth = 100, buttonHeight = 50;
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "back", "buton", [](Actor* actor) {
-		ContextState::getInstance()->SetState(new Sateliti());
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, 20, "Back", "button", [](Actor* actor) {
+		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});
 

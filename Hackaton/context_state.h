@@ -5,6 +5,9 @@
 class ContextState{
 private: 
 	AppState* currentstate;
+
+    std::vector<AppState*> previous_states;
+
     ContextState() {}
     static ContextState* instancePtr;
 
@@ -26,13 +29,30 @@ public:
 
 	void SetState(AppState* state1)
 	{
-        delete currentstate;
+        previous_states.push_back(currentstate);
+
 		currentstate = state1;
 	}
+
+    void RegressState() {
+        delete currentstate;
+
+        currentstate = previous_states.at(previous_states.size() - 1);
+        
+        previous_states.erase(previous_states.end()-1);
+    }
+
 	void InitState(){ 
         SystemManager::getInstance()->CleanSystem();
     
         currentstate->InitState(); 
+    }
+
+    ~ContextState() {
+        delete currentstate;
+
+        for (int i = 0; i < previous_states.size(); i++)
+            delete previous_states[i];
     }
 
 };
