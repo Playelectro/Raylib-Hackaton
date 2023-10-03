@@ -47,7 +47,7 @@ void SimulationState::InitState() {
 
 	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [](Actor* actor)
 		{
-			SystemManager::getInstance()->GetSystem("class PhysicsSystem")->active = !SystemManager::getInstance()->GetSystem("class PhysicsSystem")->active;
+			SystemManager::getInstance()->GetSystem("PhysicsSystem")->active = !SystemManager::getInstance()->GetSystem("PhysicsSystem")->active;
 		});
 
 

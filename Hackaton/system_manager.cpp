@@ -4,8 +4,7 @@ SystemManager* SystemManager::instancePtr = NULL;
 
 
 System* SystemManager::GetSystem(std::string id) {
- 
-
+    return systems[id];
 }
 
 
@@ -104,17 +103,24 @@ void SystemManager::RemoveActor(Actor* actor) {
 }
 
 void SystemManager::AddSystem(System* system){
-     assert(std::find(systems.begin(), systems.end(), system) == systems.end() && "Error : Tried to add the same SYSTEM twice to the System Manager!");
+    
+    std::string a = typeid(*system).name()+6;
 
-    systems[typeid(system).name()] = (system);
+    auto it = systems.find(a);
+
+    if (it != systems.end())
+        assert("Error : Tried to add the same SYSTEM twice to the System Manager! ");
+
+    systems[a] = (system);
 }
 
 
 void SystemManager::RemoveSystem(std::string system ) {
 
-    auto it = systems.find(system)->second;
+    auto it = systems.find(system);
+    System* help = it->second;
     assert(it == systems.end() && "Error : Tried to remove a non-existent SYSTEM from the System Manager!");
-    delete it;
+    delete help;
     systems.erase(it);
    
 }
