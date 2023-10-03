@@ -14,12 +14,16 @@ public:
 
 	std::string texture;
 
+	int font_size;
 
-	MenuButtonComponent(std::string text, std::string texture,  std::function<void(Actor*)> lambda)
+
+	MenuButtonComponent(std::string text, std::string texture, int font_size,  std::function<void(Actor*)> lambda)
 	{
 		this->onClick = lambda;
 		this->text = text;
 		this->texture = texture;
+
+		this->font_size = font_size;
 	}
 
 };

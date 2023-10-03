@@ -19,41 +19,41 @@ void LearningState::InitState(){
 
 	SystemManager::getInstance()->AddActor(actor);
 	
-	float buttonWidth = 100, buttonHeight = 50;
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)-100, GetScreenHeight() / 2-100, buttonWidth, buttonHeight, "Planete", "buton", [](Actor* actor) {
+	float buttonWidth = 200, buttonHeight = 100;
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)-200, GetScreenHeight() / 2-100, buttonWidth, buttonHeight, "Planete", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new PlanetState());
 		ContextState::getInstance()->InitState();
 		});
 
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)-100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)-200, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new Sateliti());
 		ContextState::getInstance()->InitState();
 		});
 
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)-100, GetScreenHeight() / 2+100, buttonWidth, buttonHeight, "Chestii 1", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)-200, GetScreenHeight() / 2+100, buttonWidth, buttonHeight, "Chestii 1", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new PlanetState());
 		ContextState::getInstance()->InitState();
 		});
 	
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)+100, GetScreenHeight() / 2-100, buttonWidth, buttonHeight, "Chestii 2", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)+200, GetScreenHeight() / 2-100, buttonWidth, buttonHeight, "Chestii 2", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new PlanetState());
 		ContextState::getInstance()->InitState();
 		});
 
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)+100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Chestii 3", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)+200, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Chestii 3", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new PlanetState());
 		ContextState::getInstance()->InitState();
 		});
 
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)+100, GetScreenHeight() / 2+100, buttonWidth, buttonHeight, "Chestii 4", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2)+200, GetScreenHeight() / 2+100, buttonWidth, buttonHeight, "Chestii 4", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new PlanetState());
 		ContextState::getInstance()->InitState();
 		});
 
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 100, GetScreenHeight() / 2 + 100, buttonWidth, buttonHeight, "Chestii 4", "buton", [](Actor* actor) {
+	/*CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 100, GetScreenHeight() / 2 + 100, buttonWidth, buttonHeight, "Chestii 4", "buton", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new PlanetState());
 		ContextState::getInstance()->InitState();
-		});
+		});*/
 	
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 

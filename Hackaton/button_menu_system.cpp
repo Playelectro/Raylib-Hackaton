@@ -12,11 +12,9 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 	Rectangle button_rectangle = { button_poz->transform.translation.x, button_poz->transform.translation.y, button_poz->transform.scale.x, button_poz->transform.scale.y };
 	
 
-	int fontSize = button_poz->transform.scale.x * button_poz->transform.scale.y / 500;
+	int size = MeasureText(button_info->text.c_str(), button_info->font_size);
 
-	int size = MeasureText(button_info->text.c_str(), fontSize);
-
-	DrawText(button_info->text.c_str(), button_poz->transform.translation.x + (button_poz->transform.scale.x / 2) - size/2, button_poz->transform.translation.y + (button_poz->transform.scale.y / 4), fontSize, WHITE);
+	DrawText(button_info->text.c_str(), button_poz->transform.translation.x + (button_poz->transform.scale.x / 2) - size/2, button_poz->transform.translation.y + (button_poz->transform.scale.y / 4), button_info->font_size, WHITE);
 	
 	if (CheckCollisionPointRec(mousePosition, button_rectangle))
 	{

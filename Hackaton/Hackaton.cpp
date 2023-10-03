@@ -12,23 +12,23 @@ int main()
     Color darkGreen = Color{ 0, 0, 0, 255 };
 
     // Window sizes
-   /* const int screenWidth = GetScreenWidth();
+    const int screenWidth = GetScreenWidth();
     const int screenHeight = GetScreenHeight();
-    */
+    
 
-    const int screenWidth = 800;
+    /*const int screenWidth = 800;
     const int screenHeight = 600;
-
+    */
     // Init window
     InitWindow(screenWidth, screenHeight, "SIMA");
-    //SetWindowState(FLAG_FULLSCREEN_MODE);
+    SetWindowState(FLAG_FULLSCREEN_MODE);
     
     SetTargetFPS(60);
 
     // Init 3D camera
     
 
-    ContextState::getInstance()->SetState(new TestState());
+    ContextState::getInstance()->SetState(new StartMenuState());
     ContextState::getInstance()->InitState();
 
     while (!WindowShouldClose())
