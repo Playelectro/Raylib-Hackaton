@@ -33,7 +33,7 @@ void SimulationState::InitState() {
 	// ADD UI BUTTONS
 		CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [](Actor* actor2)
 		{
-				std::cout << "am fost apasat";
+
 		});
 		CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 			ContextState::getInstance()->RegressState();
@@ -60,7 +60,7 @@ void SimulationState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(physics_system);
 
-	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [physics_system](Actor* actor)
+	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [physics_system](Actor* actor)
 		{
 			if(physics_system != nullptr)
 				physics_system->active = !physics_system;
