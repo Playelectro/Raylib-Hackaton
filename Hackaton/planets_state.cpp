@@ -31,5 +31,4 @@ void PlanetState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(system);
 
-
 }
