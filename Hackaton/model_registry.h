@@ -32,4 +32,5 @@ public:
     }
 
     Model GrabModel(const char*);
+    Model GrabModel(int,float,float,float);
 };

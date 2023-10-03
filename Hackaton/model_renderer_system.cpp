@@ -9,7 +9,7 @@ void ModelRendererSystem::doLogic(std::vector<Actor*> actors, int current) {
 }
 
 void ModelRendererSystem::Update() {
-	UpdateCamera(&camera, CAMERA_ORBITAL);
+	//UpdateCamera(&camera, CAMERA_ORBITAL);
 
 	BeginMode3D(camera);
 	for (int i = 0; i < actors.size(); i++) {

@@ -7,7 +7,7 @@ void TestState::InitState() {
 
 	PhysicsComponent* physics = new PhysicsComponent(200, 0.5, Vector3{0, 2.1, 0});
 
-	ModelComponent* model = new ModelComponent(ModelRegistry::getInstance()->GrabModel("planeta2.gltf"), TextureRegistry::getInstance()->GrabTexture("textura"));
+	ModelComponent* model = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1,0.5,20,20), TextureRegistry::getInstance()->GrabTexture("textura"));
 
 	PositionComponent* position = new PositionComponent(Vector3{ 10, 0, 3 });
 
@@ -25,7 +25,7 @@ void TestState::InitState() {
 
 	PhysicsComponent* physics2 = new PhysicsComponent(200, 0.5, Vector3{ 0, -2.1, 0 });
 
-	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel("planeta2.gltf"), TextureRegistry::getInstance()->GrabTexture("textura"));
+	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 0.5, 20, 20), TextureRegistry::getInstance()->GrabTexture("textura"));
 
 	PositionComponent* position2 = new PositionComponent(Vector3{ 10, 0, -3 });
 

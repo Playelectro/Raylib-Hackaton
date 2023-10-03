@@ -46,11 +46,11 @@
     <Filter Include="Resource Files\models">
       <UniqueIdentifier>{7aca999c-53ec-44f9-aadb-e85ec1827c9b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\engine\states">
-      <UniqueIdentifier>{84125eb9-6eef-4d90-982c-bdcbc0701ce5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\engine\states">
       <UniqueIdentifier>{402f08aa-712d-4d7c-b297-0a0df9576bd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine\states">
+      <UniqueIdentifier>{84125eb9-6eef-4d90-982c-bdcbc0701ce5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
