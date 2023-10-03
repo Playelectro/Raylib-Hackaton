@@ -18,7 +18,7 @@ void StartMenuState::InitState() {
 
 	float buttonWidth = 200, buttonHeight = 100;
 	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 2.5, buttonWidth, buttonHeight, 40, "Simulate","button", [](Actor* actor) {
-		ContextState::getInstance()->SetState(new TestState());
+		ContextState::getInstance()->SetState(new SimulationState());
 		ContextState::getInstance()->InitState();
 	});
 

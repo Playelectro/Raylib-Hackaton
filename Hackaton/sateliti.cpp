@@ -31,7 +31,7 @@ void Sateliti::InitState() {
 		});
 
 	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Back", "buton", [](Actor* actor) {
-		ContextState::getInstance()->SetState(new LearningState());
+		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});
 

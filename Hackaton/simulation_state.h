@@ -8,6 +8,9 @@
 #include "texture_registry.h"
 #include "sprite_renderer_system.h"
 #include "button_menu_system.h"
+#include "context_state.h"
+#include "model_renderer_system.h"
+#include "physics_system.h"
 
 /// aici ar fi prima varianta
 class SimulationState : public AppState{

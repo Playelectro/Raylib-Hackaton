@@ -10,7 +10,7 @@
 class SystemManager{
 
     private:
-        std::vector<System*> systems;
+        std::unordered_map<std::string, System*> systems;
         std::vector<Actor*> actors;
 
         void UpdateSystems(); 
@@ -36,10 +36,12 @@ class SystemManager{
             }
         }
 
+        System* GetSystem(std::string);
+
         void AddActor(Actor*);
         void RemoveActor(Actor*);
         void AddSystem(System*);
-        void RemoveSystem(System*);
+        void RemoveSystem(std::string);
 
         void Update();
         void CleanSystem();

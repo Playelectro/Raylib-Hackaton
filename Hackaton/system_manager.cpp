@@ -2,10 +2,17 @@
 
 SystemManager* SystemManager::instancePtr = NULL;
 
+
+System* SystemManager::GetSystem(std::string id) {
+ 
+
+}
+
+
 void SystemManager::Update(){
-    for (int i = 0; i < systems.size(); i++) {
-        if(systems[i]->markDeletion)
-            RemoveSystem(systems[i]);
+    for (auto i = systems.begin(); i != systems.end(); i++) {
+        if(i->second->markDeletion)
+            RemoveSystem(i->first);
     }
 
     for(int l =0; l < actors.size(); l++){
@@ -17,8 +24,8 @@ void SystemManager::Update(){
         
         if(a->flagged){
 
-            for(int i =0; i < systems.size(); i++){
-                auto req = systems[i]->GetRequirements();
+            for(auto i = systems.begin(); i != systems.end(); i++){
+                auto req = i->second->GetRequirements();
                 auto comp = a->GetComponents();
             
                 for(int j = 0; j < comp.size(); j++){
@@ -32,9 +39,9 @@ void SystemManager::Update(){
                 }
 
                     if (req.size()==0){
-                        a->systems += systems[i]->AddActor(a);
+                        a->systems += i->second->AddActor(a);
                     }else
-                        a->systems -= systems[i]->RemoveActor(a);
+                        a->systems -= i->second->RemoveActor(a);
 
             }
 
@@ -51,8 +58,8 @@ void SystemManager::Update(){
 }
 
 void SystemManager::CleanSystem() {
-    for (int i = 0; i < systems.size(); i++) {
-        systems[i]->markDeletion = true;
+    for (auto i = systems.begin(); i != systems.end(); i++) {
+        i->second->markDeletion = true;
     }
 
     for (int i = 0; i < actors.size(); i++) {
@@ -61,8 +68,8 @@ void SystemManager::CleanSystem() {
 }
 
 SystemManager::~SystemManager() {
-    for (int i = 0; i < systems.size(); i++) {
-        delete systems[i];
+    for (auto i = systems.begin(); i != systems.end(); i++) {
+        delete i->second;
     }
 
     for (int i = 0; i < actors.size(); i++) {
@@ -91,30 +98,31 @@ void SystemManager::RemoveActor(Actor* actor) {
 
     actors.erase(it);
 
-    for(int i =0; i < systems.size(); i++){
-        systems[i]->RemoveActor(actor);
+    for(auto i = systems.begin(); i != systems.end(); i++){
+        i->second->RemoveActor(actor);
     }
 }
 
 void SystemManager::AddSystem(System* system){
      assert(std::find(systems.begin(), systems.end(), system) == systems.end() && "Error : Tried to add the same SYSTEM twice to the System Manager!");
 
-    systems.push_back(system);
+    systems[typeid(system).name()] = (system);
 }
 
-void SystemManager::RemoveSystem(System* system) {
 
-    auto it = std::find(systems.begin(), systems.end(), system);
-    assert(it != systems.end() && "Error : Tried to remove a non-existent SYSTEM from the System Manager!");
+void SystemManager::RemoveSystem(std::string system ) {
 
+    auto it = systems.find(system)->second;
+    assert(it == systems.end() && "Error : Tried to remove a non-existent SYSTEM from the System Manager!");
+    delete it;
     systems.erase(it);
-    delete system;
+   
 }
 
 
 void SystemManager::UpdateSystems(){
-    for(int i =0; i < systems.size(); i++){
-        if (systems[i]->active)
-            systems[i]->Update();
+    for(auto i = systems.begin(); i != systems.end(); i++){
+        if (i->second->active)
+            i->second->Update();
     }
 }

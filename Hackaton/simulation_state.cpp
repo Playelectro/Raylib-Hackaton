@@ -2,7 +2,7 @@
 
 void SimulationState::InitState() {
 	float buttonWidth=128, buttonHeight=64;
-	float buttonWidthSq = 128, buttonHeightSq = 128;
+	float buttonWidthSq = 64, buttonHeightSq = 64;
 	Actor* actor;
 	actor = new Actor();
 
@@ -17,15 +17,15 @@ void SimulationState::InitState() {
 	actor->AddComponent(sprite);
 
 	SystemManager::getInstance()->AddActor(actor);
-
-		CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [](Actor* actor)
+	
+		CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [](Actor* actor2)
 		{
 				std::cout << "am fost apasat";
 		});
-		CreateButton(GetScreenWidth() / 2 - buttonWidthSq / 2, GetScreenHeight() / 2, buttonWidthSq, buttonHeightSq, "", "button_planeta", [](Actor* actor2)
-		{
-				std::cout << "am fost apasat";
-		});
+		CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
+			ContextState::getInstance()->RegressState();
+			ContextState::getInstance()->InitState();
+			});
 
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
@@ -34,6 +34,21 @@ void SimulationState::InitState() {
 	ButtonMenuSystem* system = new ButtonMenuSystem();
 
 	SystemManager::getInstance()->AddSystem(system);
+
+	ModelRendererSystem* renderer_3d = new ModelRendererSystem();
+
+	SystemManager::getInstance()->AddSystem(renderer_3d);
+
+	PhysicsSystem* physics_system = new PhysicsSystem();
+
+	physics_system->active = false;
+
+	SystemManager::getInstance()->AddSystem(physics_system);
+
+	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [](Actor* actor)
+		{
+			SystemManager::getInstance()->GetSystem("class PhysicsSystem")->active = !SystemManager::getInstance()->GetSystem("class PhysicsSystem")->active;
+		});
 
 
 }
