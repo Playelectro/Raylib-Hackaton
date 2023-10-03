@@ -16,7 +16,7 @@ void PhysicsSystem::doLogic(std::vector<Actor*> actors, int current) {
 
 		PhysicsComponent* actor_pshysics_b = actors[i]->GetComponent<PhysicsComponent>();
 
-		float distance = distanceVectors(actor_position_a->transform.translation, actor_position_b->transform.translation);
+		float distance = (float) distanceVectors(actor_position_a->transform.translation, actor_position_b->transform.translation);
 
 		float force =  -1/actor_pshysics_a->mass * actor_pshysics_b->mass / (distance * distance);
 		

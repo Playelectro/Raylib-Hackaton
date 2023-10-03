@@ -36,3 +36,7 @@ inline Vector3 toScalarVector(Vector3 v, double s) {
 
 	return rez;
 }
+
+inline void addActor() {
+
+}

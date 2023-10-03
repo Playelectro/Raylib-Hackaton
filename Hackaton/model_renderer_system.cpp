@@ -11,7 +11,7 @@ void ModelRendererSystem::doLogic(std::vector<Actor*> actors, int current) {
 void ModelRendererSystem::Update() {
 	//UpdateCamera(&camera, CAMERA_ORBITAL);
 
-	BeginMode3D(camera);
+	BeginMode3D(*player);
 	for (int i = 0; i < actors.size(); i++) {
 		doLogic(actors, i);
 	}

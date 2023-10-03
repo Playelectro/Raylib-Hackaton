@@ -8,7 +8,7 @@ private:
 
     std::vector<AppState*> previous_states;
 
-    ContextState() {}
+    ContextState() { currentstate = nullptr; }
     static ContextState* instancePtr;
 
 public:

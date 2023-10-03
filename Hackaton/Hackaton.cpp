@@ -3,7 +3,6 @@
 #include "texture_registry.h"
 #include "context_state.h"
 #include "start_menu_states.h"
-#include "test_state.h"
 
 int main()
 {

@@ -3,6 +3,8 @@
 void SimulationState::InitState() {
 	float buttonWidth=128, buttonHeight=64;
 	float buttonWidthSq = 64, buttonHeightSq = 64;
+
+	// ADD BACKGROUND
 	Actor* actor;
 	actor = new Actor();
 
@@ -17,7 +19,18 @@ void SimulationState::InitState() {
 	actor->AddComponent(sprite);
 
 	SystemManager::getInstance()->AddActor(actor);
-	
+
+	// ADD PLAYER CAMERA
+	Actor* player = new Actor();
+
+	CameraComponent* camera = new CameraComponent({ 0,0,0 }, {0,0,0},90.0f);
+
+	player->AddComponent(camera);
+
+	SystemManager::getInstance()->AddActor(player);
+
+
+	// ADD UI BUTTONS
 		CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [](Actor* actor2)
 		{
 				std::cout << "am fost apasat";
@@ -27,6 +40,8 @@ void SimulationState::InitState() {
 			ContextState::getInstance()->InitState();
 			});
 
+
+	// ADD SYSTEMS
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
 	SystemManager::getInstance()->AddSystem(renderer);
@@ -35,7 +50,7 @@ void SimulationState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(system);
 
-	ModelRendererSystem* renderer_3d = new ModelRendererSystem();
+	ModelRendererSystem* renderer_3d = new ModelRendererSystem(&(camera->camera));
 
 	SystemManager::getInstance()->AddSystem(renderer_3d);
 
@@ -47,7 +62,8 @@ void SimulationState::InitState() {
 
 	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [physics_system](Actor* actor)
 		{
-			physics_system->active = !physics_system;
+			if(physics_system != nullptr)
+				physics_system->active = !physics_system;
 		});
 
 
