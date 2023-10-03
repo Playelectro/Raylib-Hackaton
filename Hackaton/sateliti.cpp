@@ -20,17 +20,17 @@ void Sateliti::InitState() {
 	SystemManager::getInstance()->AddActor(actor);
 
 	float buttonWidth = 100, buttonHeight = 50;
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti Naturali", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti Naturali", "button", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new SatelitiNaturali());
 		ContextState::getInstance()->InitState();
 		});
 	
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti Artificiali", "buton", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti Artificiali", "button", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new SatelitiArtificiali());
 		ContextState::getInstance()->InitState();
 		});
 
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Back", "buton", [](Actor* actor) {
+	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});

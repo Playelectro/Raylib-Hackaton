@@ -20,7 +20,7 @@ void PlanetState::InitState() {
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
 	float buttonWidth = 100, buttonHeight = 50;
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 300, GetScreenHeight() / 2, buttonWidth, buttonHeight,20, "Back", "button", [](Actor* actor) {
+	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});
