@@ -5,11 +5,11 @@ void TestState::InitState() {
 	Actor* actor;
 	actor = new Actor();
 
-	PhysicsComponent* physics = new PhysicsComponent(200, 0.5, Vector3{0, 2.1, 0});
+	PhysicsComponent* physics = new PhysicsComponent(10000, 0.5, Vector3{0, 0, 0});
+	
+	ModelComponent* model = new ModelComponent(ModelRegistry::getInstance()->GrabModel("RubberDuck_LOD0.obj"), TextureRegistry::getInstance()->GrabTexture("RubberDuck_AlbedoTransparency"));
 
-	ModelComponent* model = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1,0.5,20,20), TextureRegistry::getInstance()->GrabTexture("textura"));
-
-	PositionComponent* position = new PositionComponent(Vector3{ 10, 0, 3 });
+	PositionComponent* position = new PositionComponent(Vector3{ 10, 0, 3 }, Quaternion{ 0.0, 1.0, 0.0, 180 }, Vector3{0.1,0.1,0.1});
 
 	actor->AddComponent(physics);
 
@@ -23,11 +23,11 @@ void TestState::InitState() {
 	Actor* actor1;
 	actor1 = new Actor();
 
-	PhysicsComponent* physics2 = new PhysicsComponent(200, 0.5, Vector3{ 0, -2.1, 0 });
+	PhysicsComponent* physics2 = new PhysicsComponent(100, 0.5, Vector3{ 0, -2.1, 0 });
 
 	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 0.5, 20, 20), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position2 = new PositionComponent(Vector3{ 10, 0, -3 });
+	PositionComponent* position2 = new PositionComponent(Vector3{ 20, 0, -20 });
 
 	actor1->AddComponent(physics2);
 
