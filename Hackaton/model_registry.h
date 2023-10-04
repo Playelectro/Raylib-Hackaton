@@ -7,11 +7,11 @@
 class ModelRegistry {
 
 private:
-    std::unordered_map<const char*, Model> models;
+    std::unordered_map<std::string, Model> models;
 
     static ModelRegistry* instancePtr;
 
-    void LoadMdl(const char*);
+    void LoadMdl(std::string);
 
     ModelRegistry() {}
 
@@ -31,6 +31,6 @@ public:
         }
     }
 
-    Model GrabModel(const char*);
+    Model GrabModel(std::string);
     Model GrabModel(int,float,float,float);
 };

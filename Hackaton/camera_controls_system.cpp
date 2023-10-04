@@ -28,8 +28,6 @@ void CameraControlsSystem::doLogic(std::vector<Actor*> actors, int current) {
 			sign = -sign;
 		}
 
-
-
 		camera->camera.position = Vector3Add(camera->camera.position, toScalarVector(move_vector, sign * GetFrameTime()));
 	}
 }

@@ -6,6 +6,8 @@
 #include "position_component.h"
 #include "texture_registry.h"
 #include "camera_component.h"
+#include "raymath.h"
+#include "util.h"
 
 class SpawnPlanetsSystem : public System {
 public:
