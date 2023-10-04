@@ -63,5 +63,7 @@ static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 in
 }
 
 static Actor* addCelestialBody(Vector3 position,Vector3 inital_vel, float mass, float radius, std::string texture) {
-	return addCelestialBody(position, {0,0,0,0}, inital_vel, mass, radius, texture);
+
+	float i = GetRandomValue(1,360);
+	return addCelestialBody(position, {1,(float)GetRandomValue(0,1),0,i}, inital_vel, mass, radius, texture);
 }

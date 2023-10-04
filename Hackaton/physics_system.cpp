@@ -52,8 +52,7 @@ void PhysicsSystem::doLogic(std::vector<Actor*> actors, int current) {
 	if (!isColliding) {
 		actor_position_a->transform.translation = rez;
 	}
-	else {
-		actor_pshysics_a->velocity = { 0 };
-	}
+
+	//TODO : ON COLLISION MERGE THE PLANETS
 
 }
