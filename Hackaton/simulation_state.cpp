@@ -6,8 +6,6 @@ void SimulationState::InitState() {
 	float buttonWidthSq = 64, buttonHeightSq = 64;
 
 	// ADD BACKGROUND
-
-
 	Actor* actor;
 	actor = new Actor();
 
@@ -36,10 +34,6 @@ void SimulationState::InitState() {
 
 
 	// ADD UI BUTTONS
-		CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [](Actor* actor2)
-		{
-
-		});
 		CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 			ContextState::getInstance()->RegressState();
 			ContextState::getInstance()->InitState();
@@ -64,6 +58,16 @@ void SimulationState::InitState() {
 	physics_system->active = false;
 
 	SystemManager::getInstance()->AddSystem(physics_system);
+
+	SpawnPlanetsSystem* spawn_planets = new SpawnPlanetsSystem();
+
+	SystemManager::getInstance()->AddSystem(spawn_planets);
+
+	CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [spawn_planets](Actor* actor2)
+		{
+			spawn_planets->isSpawning = true;
+		});
+
 
 	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [physics_system](Actor* actor)
 		{

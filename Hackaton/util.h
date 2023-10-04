@@ -3,6 +3,12 @@
 #include <raylib.h>
 #include <cmath>
 #include <raymath.h>
+#include "position_component.h"
+#include "model_component.h"
+#include "physics_component.h"
+#include "model_registry.h"
+#include "texture_registry.h"
+#include "system_manager.h"
 
 inline Vector3 addVectors(Vector3 v1, Vector3 v2) {
 	Vector3 rez;
@@ -28,7 +34,7 @@ inline double distanceVectors(Vector3 v1, Vector3 v2) {
 	return std::sqrt((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y) + (v1.z - v2.z) * (v1.z - v2.z));
 }
 
-inline Vector3 toScalarVector(Vector3 v, double s) {
+inline Vector3 toScalarVector(Vector3 v, float s) {
 	Vector3 rez;
 
 	rez.x = v.x * s;
@@ -38,24 +44,14 @@ inline Vector3 toScalarVector(Vector3 v, double s) {
 	return rez;
 }
 
-inline void addActor() {
+static void addCelestialBody(Vector3 position, Vector3 inital_vel, float mass, float radius, std::string texture) {
+	Actor* actor = new Actor();
 
-}
+	PositionComponent* position_component = new PositionComponent(position, radius);
 
-static void CameraYaw(Camera* camera, float angle, bool rotateAroundTarget)
-{
-	Vector3 up = { 0, 1, 0 };
+	PhysicsComponent* physiscs_component = new PhysicsComponent(mass, radius, inital_vel);
 
-	Vector3 targetPosition = Vector3Subtract(camera->target, camera->position);
+	ModelComponent* model_component = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, radius, 30, 30), TextureRegistry::getInstance()->GrabTexture(texture));
 
-	targetPosition = Vector3RotateByAxisAngle(targetPosition, up, angle);
-
-	if (rotateAroundTarget)
-	{
-		camera->position = Vector3Subtract(camera->target, targetPosition);
-	}
-	else 
-	{
-		camera->target = Vector3Add(camera->position, targetPosition);
-	}
+	SystemManager::getInstance()->AddActor(actor);
 }

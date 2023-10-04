@@ -2,14 +2,14 @@
 
 ModelRegistry* ModelRegistry::instancePtr = NULL;
 
-void ModelRegistry::LoadMdl(const char* path) {
+void ModelRegistry::LoadMdl(std::string path) {
 
-	Model pot = LoadModel(path);
+	Model pot = LoadModel(path.c_str());
 
 	models[path] = pot;
 }
 
-Model ModelRegistry::GrabModel(const char* path) {
+Model ModelRegistry::GrabModel(std::string path) {
 
 	if (models.find(path) == models.end()) {
 		ModelRegistry::getInstance()->LoadMdl(path);
@@ -25,10 +25,6 @@ Model ModelRegistry::GrabModel(int type, float a, float b, float c) {
 	Mesh mesh;
 
 	switch (type) {
-		case 2:
-			shape = "cube";
-			mesh = GenMeshCube(a, b, c);
-			break;
 		case 1:
 		default:
 			shape = "sphere";
