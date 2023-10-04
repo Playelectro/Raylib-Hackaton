@@ -44,14 +44,24 @@ inline Vector3 toScalarVector(Vector3 v, float s) {
 	return rez;
 }
 
-static void addCelestialBody(Vector3 position, Vector3 inital_vel, float mass, float radius, std::string texture) {
+static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 inital_vel, float mass, float radius, std::string texture) {
 	Actor* actor = new Actor();
 
-	PositionComponent* position_component = new PositionComponent(position, radius);
+	PositionComponent* position_component = new PositionComponent(position, rotation, { radius,radius,radius });
 
 	PhysicsComponent* physiscs_component = new PhysicsComponent(mass, radius, inital_vel);
 
 	ModelComponent* model_component = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, radius, 30, 30), TextureRegistry::getInstance()->GrabTexture(texture));
 
+	actor->AddComponent(position_component);
+	actor->AddComponent(physiscs_component);
+	actor->AddComponent(model_component);
+
 	SystemManager::getInstance()->AddActor(actor);
+
+	return actor;
+}
+
+static Actor* addCelestialBody(Vector3 position,Vector3 inital_vel, float mass, float radius, std::string texture) {
+	return addCelestialBody(position, {0,0,0,0}, inital_vel, mass, radius, texture);
 }
