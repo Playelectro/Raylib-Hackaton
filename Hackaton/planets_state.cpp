@@ -56,6 +56,25 @@ void PlanetState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(spin_system);
 
+	/*Actor* actor0;
+	actor0 = new Actor();
+
+	RotateAroundAxisComponent* spin0 = new RotateAroundAxisComponent(3);
+
+	ModelComponent* model0 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(0, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
+
+	PositionComponent* position0 = new PositionComponent(Vector3{ 0, 0, -150 }, { 0, 1, 0, 3 }, { 30, 30, 30 });
+
+	actor0->AddComponent(model0); 
+
+	actor0->AddComponent(position0); 
+
+	actor0->AddComponent(spin0);
+
+	SystemManager::getInstance()->AddActor(actor0);
+	*/
+
+
 	Actor* actor1;
 	actor1 = new Actor();
 
@@ -63,7 +82,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(0, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position2 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 3 }, {2,2,});
+	PositionComponent* position2 = new PositionComponent(Vector3{ 0, 0, -80 }, { 0, 1, 0, 3 }, {0.38,0.38,0.38});
 
 	actor1->AddComponent(model2);
 
@@ -79,7 +98,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model3 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position3 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 0 }, { 2,2,2 });
+	PositionComponent* position3 = new PositionComponent(Vector3{ 0, 0, -60 }, { 0, 1, 0, 0 }, { 0.94,0.94,0.94 });
 
 	RotateAroundAxisComponent* spin3 = new RotateAroundAxisComponent(3);
 
@@ -94,7 +113,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model4 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(0, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position4 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 0 }, { 2,2,2 });
+	PositionComponent* position4 = new PositionComponent(Vector3{ 0, 0, -40 }, { 0, 1, 0, 0 }, { 0.53,0.53,0.53});
 
 	RotateAroundAxisComponent* spin4 = new RotateAroundAxisComponent(3);
 
@@ -110,7 +129,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model5 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position5 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 0 }, { 2,2,2 });
+	PositionComponent* position5 = new PositionComponent(Vector3{ 0, 0, -20 }, { 0, 1, 0, 0 }, { 10.97,10.97,10.97 });
 
 	RotateAroundAxisComponent* spin5 = new RotateAroundAxisComponent(3);
 
@@ -125,7 +144,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model6 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(0, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position6 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 0 }, { 2,2,2 });
+	PositionComponent* position6 = new PositionComponent(Vector3{ 0, 0, 0 }, { 0, 1, 0, 0 }, { 9.14,9.14,9.14 });
 
 	RotateAroundAxisComponent* spin6 = new RotateAroundAxisComponent(3);
 
@@ -141,7 +160,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model7 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position7 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 0 }, { 2,2,2 });
+	PositionComponent* position7 = new PositionComponent(Vector3{ 0, 0, 20 }, { 0, 1, 0, 0 }, { 3.98,3.98,3.98 });
 
 	RotateAroundAxisComponent* spin7 = new RotateAroundAxisComponent(3);
 
@@ -156,7 +175,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model8 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 
-	PositionComponent* position8 = new PositionComponent(Vector3{ 0, 0, 30 }, { 0, 1, 0, 0 }, { 2,2,2 });
+	PositionComponent* position8 = new PositionComponent(Vector3{ 0, 0, 40 }, { 0, 1, 0, 0 }, { 3.86,3.86,3.86 });
 
 	RotateAroundAxisComponent* spin8 = new RotateAroundAxisComponent(3);
 
@@ -165,5 +184,20 @@ void PlanetState::InitState() {
 	actor7->AddComponent(position8);
 
 	SystemManager::getInstance()->AddActor(actor7);
+
+	Actor* actor8;
+	actor8 = new Actor();
+
+	ModelComponent* model9 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
+
+	PositionComponent* position9 = new PositionComponent(Vector3{ 0, 0, 60 }, { 0, 1, 0, 0 }, { 0.18,0.18,0.18 });
+
+	RotateAroundAxisComponent* spin9 = new RotateAroundAxisComponent(3);
+
+	actor7->AddComponent(model9);
+
+	actor7->AddComponent(position9);
+
+	SystemManager::getInstance()->AddActor(actor8);
 
 }
