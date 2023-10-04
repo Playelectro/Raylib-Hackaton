@@ -15,6 +15,7 @@
 #include "model_registry.h"
 #include "camera_controls_system.h"
 #include "spawn_planets_system.h"
+#include "grid_system.h"
 
 class SimulationState : public AppState{
 public:
