@@ -213,7 +213,7 @@
       <Filter>Header Files\engine\system</Filter>
     </ClInclude>
     <ClInclude Include="spawn_planets_system.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\engine\system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

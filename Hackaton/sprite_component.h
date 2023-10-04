@@ -13,4 +13,8 @@ public:
 		this->texture = texture;
 		this->z_order = z_order;
 	}
+
+	~SpriteComponent() {
+		UnloadTexture(texture);
+	}
 };

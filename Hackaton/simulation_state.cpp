@@ -1,24 +1,25 @@
 #include "simulation_state.h"
 
+
 void SimulationState::InitState() {
-	float buttonWidth=128, buttonHeight=64;
+	float buttonWidth = 128, buttonHeight = 64;
 	float buttonWidthSq = 64, buttonHeightSq = 64;
 
 	// ADD BACKGROUND
+
+
 	Actor* actor;
 	actor = new Actor();
 
-	PositionComponent* position;
-	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
+	SpriteComponent* model = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("cosmos"),0);
+	PositionComponent* pos = new PositionComponent({0,0,0}, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
-	SpriteComponent* sprite;
-	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(std::string("space")), 0);
-
-	actor->AddComponent(position);
-
-	actor->AddComponent(sprite);
+	actor->AddComponent(model);
+	actor->AddComponent(pos);
 
 	SystemManager::getInstance()->AddActor(actor);
+	
+
 
 	// ADD PLAYER CAMERA
 	Actor* player = new Actor();
@@ -74,9 +75,9 @@ void SimulationState::InitState() {
 	Actor* actor1;
 	actor1 = new Actor();
 	
-	PhysicsComponent* phy = new PhysicsComponent(10000, 2, Vector3{ 0, 1.5, 0 });
+	PhysicsComponent* phy = new PhysicsComponent(10000, 2, Vector3{ 0, 0, 0 });
 
-	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
+	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(0, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 	
 	PositionComponent* position2 = new PositionComponent(Vector3{ 0, 0, 5 });
 
@@ -92,7 +93,7 @@ void SimulationState::InitState() {
 	Actor* actor2;
 	actor2 = new Actor();
 
-	PhysicsComponent* phy2 = new PhysicsComponent(10000, 2, Vector3{ 0, -1.5, 0 });
+	PhysicsComponent* phy2 = new PhysicsComponent(10000, 2, Vector3{ 0, 0, 0 });
 
 	ModelComponent* model3 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("textura"));
 

@@ -14,8 +14,8 @@
 #include "camera_component.h"
 #include "model_registry.h"
 #include "camera_controls_system.h"
+#include <rlgl.h>
 
-/// aici ar fi prima varianta
 class SimulationState : public AppState{
 public:
 	void InitState() override;

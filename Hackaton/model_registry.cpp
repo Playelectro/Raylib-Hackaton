@@ -22,14 +22,22 @@ Model ModelRegistry::GrabModel(int type, float a, float b, float c) {
 
 	std::string shape;
 
+	Mesh mesh;
+
 	switch (type) {
+		case 2:
+			shape = "cube";
+			mesh = GenMeshCube(a, b, c);
+			break;
 		case 1:
-			default:
-				shape = "sphere";
+		default:
+			shape = "sphere";
+			mesh = GenMeshSphere(a, b, c);
+			break;
 	}
 
 	if (models.find(shape.c_str()) == models.end()) {
-		models[shape.c_str()] = LoadModelFromMesh(GenMeshSphere(a, b, c));
+		models[shape.c_str()] = LoadModelFromMesh(mesh);
 	}
 	// TODO Add a recent textures folder that keeps the texture loaded to the gpu in case of instancing
 	return models[shape.c_str()];

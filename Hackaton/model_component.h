@@ -15,4 +15,10 @@ public:
 
 		model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = texture;
 	}
+
+/*	~ModelComponent() {
+		UnloadShader(model.materials[0].shader);
+		UnloadTexture(model.materials[0].maps[MATERIAL_MAP_CUBEMAP].texture);
+		UnloadModel(model);
+	}*/
 };

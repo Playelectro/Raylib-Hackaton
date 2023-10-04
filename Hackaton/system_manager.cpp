@@ -18,6 +18,8 @@ void SystemManager::Update(){
         
         if(a->flagged){
 
+            a->systems = 0;
+
             for(auto i = 0; i < systems.size(); i++){
                 auto req = systems[i]->GetRequirements();
                 auto comp = a->GetComponents();
@@ -31,11 +33,13 @@ void SystemManager::Update(){
                         }
                     }
                 }
-
+                 
                     if (req.size()==0){
                         a->systems += systems[i]->AddActor(a);
-                    }else
-                        a->systems -= systems[i]->RemoveActor(a);
+                    }
+                    else {
+                        systems[i]->RemoveActor(a);
+                    }
 
             }
 
