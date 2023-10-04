@@ -11,6 +11,8 @@
 #include "button_menu_system.h"
 #include "model_registry.h"
 #include "model_component.h"
+#include "spin_actor_system.h"
+#include "rotate_around_axis_component.h"
 
 class LearningState : public AppState{
 public:
