@@ -27,6 +27,10 @@ void StartMenuState::InitState() {
 		ContextState::getInstance()->InitState();
 		});
 
+	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Exit", "button", [](Actor* actor) {
+			CloseWindow();
+		});
+
 	SpriteRendererSystem* renderer = new SpriteRendererSystem();
 
 	SystemManager::getInstance()->AddSystem(renderer);

@@ -16,10 +16,19 @@ void CameraControlsSystem::doLogic(std::vector<Actor*> actors, int current) {
 		camera->camera.position = Vector3Add(camera->camera.target, view);
 	}
 
-	if (GetMouseWheelMove() != 0) {
+
+
+
+	if (GetMouseWheelMove() != 0 || IsKeyDown(87) || IsKeyDown(83)) {
 		Vector3 move_vector = Vector3Subtract(camera->camera.target, camera->camera.position);
 		
 		int sign = ((GetMouseWheelMove() < 0) ? -1 : 1);
+
+		if (IsKeyDown(83)) {
+			sign = -sign;
+		}
+
+
 
 		camera->camera.position = Vector3Add(camera->camera.position, toScalarVector(move_vector, sign * GetFrameTime()));
 	}

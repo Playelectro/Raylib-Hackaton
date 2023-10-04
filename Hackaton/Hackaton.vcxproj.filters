@@ -120,6 +120,9 @@
     <ClCompile Include="camera_controls_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
+    <ClCompile Include="spawn_planets_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -208,6 +211,9 @@
     </ClInclude>
     <ClInclude Include="camera_controls_system.h">
       <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="spawn_planets_system.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
