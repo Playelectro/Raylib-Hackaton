@@ -11,7 +11,7 @@ void SpawnPlanetsSystem::doLogic(std::vector<Actor*> actors, int current) {
 		
 		if (IsMouseButtonReleased(0)) {
 
-			addCelestialBody(Vector3Add(hit.point, { 0,1,0 }), { 0,0,0 }, 1000, 1, "textura");
+			addCelestialBody(Vector3Add(hit.point, { 0,1,0 }), { 0,0,0 }, 1000, 1, PlanetType::GAS, 100, "textura");
 			
 			isSpawning = false;
 		}

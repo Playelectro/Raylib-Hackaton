@@ -2,6 +2,7 @@
 #include "system.h"
 #include "physics_component.h"
 #include "position_component.h"
+#include "model_component.h"
 #include "util.h"
 
 class PhysicsSystem : public System {
@@ -12,7 +13,10 @@ public:
 	PhysicsSystem() {
 		requirements.push_back(typeid(PositionComponent).name());
 		requirements.push_back(typeid(PhysicsComponent).name());
+		requirements.push_back(typeid(ModelComponent).name());
 	}
+
+
 
 	void doLogic(std::vector<Actor*> actors, int current) override;
 };

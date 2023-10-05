@@ -77,4 +77,8 @@ void SimulationState::InitState() {
 				physics_system->active = !physics_system->active;
 		});
 
+
+	addCelestialBody({ 0,0,-10 }, { 0,0,0 }, 100, 1, PlanetType::SOLID, 5.50, "textura");
+	addCelestialBody({ 0,0,10 }, { 0,0,0 }, 100, 2, PlanetType::GAS, 1.60, "textura");
+
 }

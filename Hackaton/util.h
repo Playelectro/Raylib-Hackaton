@@ -45,12 +45,12 @@ inline Vector3 toScalarVector(Vector3 v, float s) {
 	return rez;
 }
 
-static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 inital_vel, float mass, float radius, std::string texture) {
+static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 inital_vel, float mass, float radius, PlanetType type, float density, std::string texture) {
 	Actor* actor = new Actor();
 
 	PositionComponent* position_component = new PositionComponent(position, rotation, { radius,radius,radius });
 
-	PhysicsComponent* physiscs_component = new PhysicsComponent(mass, radius, inital_vel);
+	PhysicsComponent* physiscs_component = new PhysicsComponent(mass, radius, inital_vel,type,density);
 
 	ModelComponent* model_component = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, radius, 30, 30), TextureRegistry::getInstance()->GrabTexture(texture));
 
@@ -63,6 +63,7 @@ static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 in
 	return actor;
 }
 
+<<<<<<< Updated upstream
 static Actor* addCelestialBody(Vector3 position, float radius, float angle, std::string texture) {
 	Actor* actor = new Actor();
 
@@ -85,4 +86,10 @@ static Actor* addCelestialBody(Vector3 position, Vector3 inital_vel, float mass,
 
 	float i = GetRandomValue(1, 360);
 	return addCelestialBody(position, { 1,(float)GetRandomValue(0,1),0,i }, inital_vel, mass, radius, texture);
+=======
+static Actor* addCelestialBody(Vector3 position,Vector3 inital_vel, float mass, float radius, PlanetType type, float density, std::string texture) {
+
+	float i = GetRandomValue(1,360);
+	return addCelestialBody(position, {1,(float)GetRandomValue(0,1),0,i}, inital_vel, mass, radius, type, density, texture);
+>>>>>>> Stashed changes
 }
