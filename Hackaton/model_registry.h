@@ -32,5 +32,10 @@ public:
     }
 
     Model GrabModel(std::string);
-    Model GrabModel(int,float,float,float);
+    Model GrabModel(int, float, float, float);
+
+    ~ModelRegistry() {
+        for (auto i = models.begin(); i != models.end(); i++)
+            UnloadModel(i->second);
+    }
 };

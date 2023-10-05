@@ -23,7 +23,7 @@ void ButtonMenuSystem::doLogic(std::vector<Actor*> actors, int current) {
 		
 		if (IsMouseButtonPressed(0))
 		{
-			button_info->onClick(actors[current]);
+			button_info->onClick(actors[current], actors);
 		}
 	}
 	else 

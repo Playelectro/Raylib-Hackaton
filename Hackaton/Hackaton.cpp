@@ -14,15 +14,8 @@ int main()
     const int screenWidth = GetScreenWidth();
     const int screenHeight = GetScreenHeight();
     
-
-   ///const int screenWidth = 800;
-  /// const int screenHeight = 600;
-  // const int screenWidth = GetScreenWidth();
-  // const int screenHeight = GetScreenHeight();
-    
-
-  /// const int screenWidth = 800;
-   ///const int screenHeight = 600;
+   //const int screenWidth = 800;
+   //const int screenHeight = 600;
     
     // Init window
     InitWindow(screenWidth, screenHeight, "SIMA");

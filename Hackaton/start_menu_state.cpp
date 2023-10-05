@@ -17,12 +17,12 @@ void StartMenuState::InitState() {
 	SystemManager::getInstance()->AddActor(actor);
 
 	float buttonWidth = 200, buttonHeight = 100;
-	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 2.5, buttonWidth, buttonHeight, 40, "Simulate","button", [](Actor* actor) {
+	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 2.5, buttonWidth, buttonHeight, 40, "Simulate","button", [](Actor* actor, std::vector<Actor*>) {
 		ContextState::getInstance()->SetState(new SimulationState());
 		ContextState::getInstance()->InitState();
 	});
 
-	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 1.5, buttonWidth, buttonHeight, 40, "Learn","button", [](Actor* actor) {
+	CreateButton(GetScreenWidth() / 2 - buttonWidth / 2, GetScreenHeight() / 1.5, buttonWidth, buttonHeight, 40, "Learn","button", [](Actor* actor, std::vector<Actor*>) {
 		ContextState::getInstance()->SetState(new LearningState());
 		ContextState::getInstance()->InitState();
 		});

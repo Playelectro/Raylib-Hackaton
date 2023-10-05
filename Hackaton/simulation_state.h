@@ -16,6 +16,10 @@
 #include "camera_controls_system.h"
 #include "spawn_planets_system.h"
 #include "grid_system.h"
+#include "text_input_system.h"
+#include "text_input_component.h"
+#include "click_system.h"
+#include "data_transfer_component.h"
 
 class SimulationState : public AppState{
 public:

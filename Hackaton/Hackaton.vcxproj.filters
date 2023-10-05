@@ -132,6 +132,12 @@
     <ClCompile Include="black_hole_physics_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
+    <ClCompile Include="click_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="text_input_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.h">
@@ -232,6 +238,18 @@
     </ClInclude>
     <ClInclude Include="black_hole_physics_system.h">
       <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="data_transfer_component.h">
+      <Filter>Header Files\engine\components</Filter>
+    </ClInclude>
+    <ClInclude Include="click_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="text_input_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="text_input_component.h">
+      <Filter>Header Files\engine\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

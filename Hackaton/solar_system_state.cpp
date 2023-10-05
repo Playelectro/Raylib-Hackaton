@@ -34,7 +34,7 @@ void SolarSystemState::InitState() {
 
 
 	// ADD UI BUTTONS
-	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
+	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor, std::vector<Actor*>) {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
 		});
@@ -67,12 +67,12 @@ void SolarSystemState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(spawn_planets);
 
-	CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [spawn_planets](Actor* actor2)
+	CreateButton(GetScreenWidth() / 16 - buttonWidthSq / 2, GetScreenHeight() / 25, buttonWidthSq, buttonHeightSq, "", "button_planeta", [spawn_planets](Actor* actor2, std::vector<Actor*>)
 		{
 			spawn_planets->isSpawning = true;
 		});
 
-	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [learning_physics_system](Actor* actor)
+	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [learning_physics_system](Actor* actor, std::vector<Actor*>)
 		{
 			learning_physics_system->active = !learning_physics_system->active;
 		});
