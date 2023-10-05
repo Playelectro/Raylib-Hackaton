@@ -1,8 +1,8 @@
 #include "planets_state.h"
 void PlanetState::InitState() {
-	///BACKGROUND
-	Actor* actor;
-	actor = new Actor();
+	///BACKGROUND 
+	Actor* actor; 
+	actor = new Actor(); 
 
 	PositionComponent* position;
 	position = new PositionComponent(Vector3{ 0, 0, 0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
@@ -29,8 +29,7 @@ void PlanetState::InitState() {
 	SystemManager::getInstance()->AddActor(player);
 
 
-
-	float buttonWidth = 100, buttonHeight = 50;
+	float buttonWidth = 128, buttonHeight = 64;
 	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
@@ -186,7 +185,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model8 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("texture_uranus"));
 
-	PositionComponent* position8 = new PositionComponent(Vector3{ 0, 0, 80 }, { 0, 0,1, 0 }, { 3.98,3.98,3.98 });
+	PositionComponent* position8 = new PositionComponent(Vector3{ 0, 0, 80 }, { 0, 0, 1, 0 }, { 3.98,3.98,3.98 });
 
 	RotateAroundAxisComponent* spin8 = new RotateAroundAxisComponent(-0.7);
 

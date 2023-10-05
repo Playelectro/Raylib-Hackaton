@@ -1,7 +1,7 @@
-#include "simulation_state.h"
+#include "solar_system_state.h"
 
 
-void SimulationState::InitState() {
+void SolarSystemState::InitState() {
 	float buttonWidth = 128, buttonHeight = 64;
 	float buttonWidthSq = 64, buttonHeightSq = 64;
 
@@ -9,20 +9,20 @@ void SimulationState::InitState() {
 	Actor* actor;
 	actor = new Actor();
 
-	SpriteComponent* model = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("cosmos"),0);
-	PositionComponent* pos = new PositionComponent({0,0,0}, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
+	SpriteComponent* model = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("cosmos"), 0);
+	PositionComponent* pos = new PositionComponent({ 0,0,0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	actor->AddComponent(model);
 	actor->AddComponent(pos);
 
 	SystemManager::getInstance()->AddActor(actor);
-	
+
 
 
 	// ADD PLAYER CAMERA
 	Actor* player = new Actor();
 
-	CameraComponent* camera = new CameraComponent({ -15, 5, 0}, {0,-10,0},90.0f);
+	CameraComponent* camera = new CameraComponent({ -15, 5, 0 }, { 0,-10,0 }, 90.0f);
 
 	player->AddComponent(camera);
 
@@ -37,7 +37,7 @@ void SimulationState::InitState() {
 	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
-	});
+		});
 
 
 	// ADD SYSTEMS
@@ -57,11 +57,11 @@ void SimulationState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(renderer_3d);
 
-	PhysicsSystem* physics_system = new PhysicsSystem();
+	LearningPhysicsSystem* learning_physics_system = new LearningPhysicsSystem();
 
-	physics_system->active = false;
+	learning_physics_system->active = false;
 
-	SystemManager::getInstance()->AddSystem(physics_system);
+	SystemManager::getInstance()->AddSystem(learning_physics_system);
 
 	SpawnPlanetsSystem* spawn_planets = new SpawnPlanetsSystem();
 
@@ -72,13 +72,16 @@ void SimulationState::InitState() {
 			spawn_planets->isSpawning = true;
 		});
 
-	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [physics_system](Actor* actor)
+	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [learning_physics_system](Actor* actor)
 		{
-				physics_system->active = !physics_system->active;
+			learning_physics_system->active = !learning_physics_system->active;
 		});
 
 
-	addCelestialBody({ 0,0,-10 }, { 12.3,0,0 }, 10000, 1, "textura");
-	addCelestialBody({ 0,0,10 }, { -12.3,0,0 }, 10000, 1, "textura");
+
+	addCelestialBody({ 0,0, 0 }, { 0,0,0 }, 1000, 1.5, "texture_sun");
+	addCelestialBody({ 0,0,10 }, { 20,0,0 }, 10, 0.5, "texture_saturn");
+	addCelestialBody({ 17,0,0 }, { 0,0,10 }, 30, 0.8, "texture_mercur");
+	addCelestialBody({ 0,0,-30 }, { -7,0,0 }, 45, 1, "texture_pamant");
 
 }

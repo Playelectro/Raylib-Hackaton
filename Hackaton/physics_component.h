@@ -2,25 +2,17 @@
 #include <raylib.h>
 #include "component.h"
 
-
-enum PlanetType {
-    GAS,
-    SOLID
-};
-
 class PhysicsComponent : public Component{
         
     public:
 
-        float mass, radius, density, volume;
+        float mass, radius;
         Vector3 velocity;
-        PlanetType type; 
+        bool is_black_hole;
 
-        PhysicsComponent(float mass, float radius, Vector3 velocity, PlanetType type, float density) {
+        PhysicsComponent(float mass, float radius, Vector3 velocity) {
             this->mass = mass;
             this->radius = radius;
             this->velocity = velocity;
-            this->density = density;
-            this->type = type;
         };
 };

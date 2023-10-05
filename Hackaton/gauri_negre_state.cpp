@@ -1,7 +1,7 @@
-#include "simulation_state.h"
+#include "gauri_negre_state.h"
 
 
-void SimulationState::InitState() {
+void GauriNegreState::InitState() {
 	float buttonWidth = 128, buttonHeight = 64;
 	float buttonWidthSq = 64, buttonHeightSq = 64;
 
@@ -9,20 +9,20 @@ void SimulationState::InitState() {
 	Actor* actor;
 	actor = new Actor();
 
-	SpriteComponent* model = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("cosmos"),0);
-	PositionComponent* pos = new PositionComponent({0,0,0}, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
+	SpriteComponent* model = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture("cosmos"), 0);
+	PositionComponent* pos = new PositionComponent({ 0,0,0 }, Vector3{ (float)GetScreenWidth(),(float)GetScreenHeight(), 0 });
 
 	actor->AddComponent(model);
 	actor->AddComponent(pos);
 
 	SystemManager::getInstance()->AddActor(actor);
-	
+
 
 
 	// ADD PLAYER CAMERA
 	Actor* player = new Actor();
 
-	CameraComponent* camera = new CameraComponent({ -15, 5, 0}, {0,-10,0},90.0f);
+	CameraComponent* camera = new CameraComponent({ -15, 5, 0 }, { 0,-10,0 }, 90.0f);
 
 	player->AddComponent(camera);
 
@@ -37,7 +37,7 @@ void SimulationState::InitState() {
 	CreateButton(GetScreenWidth() / 11 - buttonWidth / 2, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, 30, "Back", "button", [](Actor* actor) {
 		ContextState::getInstance()->RegressState();
 		ContextState::getInstance()->InitState();
-	});
+		});
 
 
 	// ADD SYSTEMS
@@ -57,11 +57,11 @@ void SimulationState::InitState() {
 
 	SystemManager::getInstance()->AddSystem(renderer_3d);
 
-	PhysicsSystem* physics_system = new PhysicsSystem();
+	BlackHolePhysicsSystem* black_hole_physics_system = new BlackHolePhysicsSystem();
 
-	physics_system->active = false;
+	black_hole_physics_system->active = false;
 
-	SystemManager::getInstance()->AddSystem(physics_system);
+	SystemManager::getInstance()->AddSystem(black_hole_physics_system);
 
 	SpawnPlanetsSystem* spawn_planets = new SpawnPlanetsSystem();
 
@@ -72,13 +72,13 @@ void SimulationState::InitState() {
 			spawn_planets->isSpawning = true;
 		});
 
-	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [physics_system](Actor* actor)
+	CreateButton(GetScreenWidth() / 1.12 - buttonWidth / 2 + 12, GetScreenHeight() / 1.15, buttonWidth, buttonHeight, "", "button_play", [black_hole_physics_system](Actor* actor)
 		{
-				physics_system->active = !physics_system->active;
+			black_hole_physics_system->active = !black_hole_physics_system->active;
 		});
 
-
-	addCelestialBody({ 0,0,-10 }, { 12.3,0,0 }, 10000, 1, "textura");
-	addCelestialBody({ 0,0,10 }, { -12.3,0,0 }, 10000, 1, "textura");
+	addCelestialBody({ 0,0,-50 }, { 0,0,0 }, 10000, 1, "textura", false); 
+	addCelestialBody({ 0,0,50 }, { -12.2,0,0 }, 10000, 1, "textura", false); 
+	addCelestialBody({ 0,0,0 }, { 0,0,0 }, 1000000, 1, "black_hole", true); 
 
 }

@@ -102,13 +102,13 @@
     <ClCompile Include="planets_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
-    <ClCompile Include="sateliti_artificiali.cpp">
+    <ClCompile Include="solar_system_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
-    <ClCompile Include="sateliti.cpp">
+    <ClCompile Include="gauri_negre_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
-    <ClCompile Include="sateliti_naturali.cpp">
+    <ClCompile Include="binary_system_state.cpp">
       <Filter>Source Files\engine\states</Filter>
     </ClCompile>
     <ClCompile Include="transition_state.cpp">
@@ -124,6 +124,12 @@
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
     <ClCompile Include="grid_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="learning_physics_system.cpp">
+      <Filter>Source Files\engine\systems</Filter>
+    </ClCompile>
+    <ClCompile Include="black_hole_physics_system.cpp">
       <Filter>Source Files\engine\systems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -194,13 +200,13 @@
     <ClInclude Include="context_state.h">
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
-    <ClInclude Include="sateliti_artificiali.h">
+    <ClInclude Include="solar_system_state.h">
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
-    <ClInclude Include="sateliti_naturali.h">
+    <ClInclude Include="binary_system_state.h">
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
-    <ClInclude Include="sateliti.h">
+    <ClInclude Include="gauri_negre_state.h">
       <Filter>Header Files\engine\states</Filter>
     </ClInclude>
     <ClInclude Include="camera_component.h">
@@ -219,6 +225,12 @@
       <Filter>Header Files\engine\system</Filter>
     </ClInclude>
     <ClInclude Include="grid_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="learning_physics_system.h">
+      <Filter>Header Files\engine\system</Filter>
+    </ClInclude>
+    <ClInclude Include="black_hole_physics_system.h">
       <Filter>Header Files\engine\system</Filter>
     </ClInclude>
   </ItemGroup>
@@ -266,6 +278,9 @@
       <Filter>Resource Files\textures</Filter>
     </Image>
     <Image Include="texture_marte.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_sun.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
   </ItemGroup>
