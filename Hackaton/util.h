@@ -62,34 +62,8 @@ static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 in
 
 	return actor;
 }
-
-<<<<<<< Updated upstream
-static Actor* addCelestialBody(Vector3 position, float radius, float angle, std::string texture) {
-	Actor* actor = new Actor();
-
-	PositionComponent* position_component = new PositionComponent(position, {0, 1, 0, 0}, {radius,radius,radius});
-
-	RotateAroundAxisComponent* spin_component = new RotateAroundAxisComponent(angle);
-
-	ModelComponent* model_component = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, radius, 30, 30), TextureRegistry::getInstance()->GrabTexture(texture));
-	
-	actor->AddComponent(position_component);
-	actor->AddComponent(spin_component);
-	actor->AddComponent(model_component);
-
-	SystemManager::getInstance()->AddActor(actor);
-
-	return actor;
-}
-
-static Actor* addCelestialBody(Vector3 position, Vector3 inital_vel, float mass, float radius, std::string texture) {
-
-	float i = GetRandomValue(1, 360);
-	return addCelestialBody(position, { 1,(float)GetRandomValue(0,1),0,i }, inital_vel, mass, radius, texture);
-=======
 static Actor* addCelestialBody(Vector3 position,Vector3 inital_vel, float mass, float radius, PlanetType type, float density, std::string texture) {
 
 	float i = GetRandomValue(1,360);
 	return addCelestialBody(position, {1,(float)GetRandomValue(0,1),0,i}, inital_vel, mass, radius, type, density, texture);
->>>>>>> Stashed changes
 }

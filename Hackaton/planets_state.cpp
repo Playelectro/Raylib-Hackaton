@@ -18,7 +18,7 @@ void PlanetState::InitState() {
 	///CAMERA
 	Actor* player = new Actor();
 
-	CameraComponent* camera = new CameraComponent({ -100, 2, -10 }, { 0,0,0 }, 90.0f);
+	CameraComponent* camera = new CameraComponent({ -80, 2, -10 }, { 0,0,0 }, 90.0f);
 
 	player->AddComponent(camera);
 
@@ -80,7 +80,7 @@ void PlanetState::InitState() {
 
 	ModelComponent* model2 = new ModelComponent(ModelRegistry::getInstance()->GrabModel(0, 2, 60, 60), TextureRegistry::getInstance()->GrabTexture("texture_mercur"));
 
-	PositionComponent* position2 = new PositionComponent(Vector3{ 0, 0, -120 }, { 0, 1, 0, 3 }, {0.38,0.38,0.38});
+	PositionComponent* position2 = new PositionComponent(Vector3{ 0, 0, -110 }, { 0, 1, 0, 3 }, {0.38,0.38,0.38});
 
 	actor1->AddComponent(model2);
 
