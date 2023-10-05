@@ -11,12 +11,12 @@ int main()
     Color darkGreen = Color{ 0, 0, 0, 255 };
 
     // Window sizes
-   const int screenWidth = GetScreenWidth();
-   const int screenHeight = GetScreenHeight();
+    const int screenWidth = GetScreenWidth();
+    const int screenHeight = GetScreenHeight();
     
 
-   //const int screenWidth = 800;
-   //const int screenHeight = 600;
+   ///const int screenWidth = 800;
+  /// const int screenHeight = 600;
     
     // Init window
     InitWindow(screenWidth, screenHeight, "SIMA");

@@ -19,13 +19,13 @@ void Sateliti::InitState() {
 
 	SystemManager::getInstance()->AddActor(actor);
 
-	float buttonWidth = 100, buttonHeight = 50;
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti Naturali", "button", [](Actor* actor) {
+	float buttonWidth = 200, buttonHeight = 100;
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) - 400, GetScreenHeight() / 2, buttonWidth, buttonHeight, 20,"Sateliti Naturali", "button", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new SatelitiNaturali());
 		ContextState::getInstance()->InitState();
 		});
 	
-	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 100, GetScreenHeight() / 2, buttonWidth, buttonHeight, "Sateliti Artificiali", "button", [](Actor* actor) {
+	CreateButton((GetScreenWidth() / 2 - buttonWidth / 2) + 400, GetScreenHeight() / 2, buttonWidth, buttonHeight,20 ,"Sateliti Artificiali", "button", [](Actor* actor) {
 		ContextState::getInstance()->SetState(new SatelitiArtificiali());
 		ContextState::getInstance()->InitState();
 		});
@@ -44,6 +44,5 @@ void Sateliti::InitState() {
 	ButtonMenuSystem* system = new ButtonMenuSystem();
 
 	SystemManager::getInstance()->AddSystem(system);
-
 
 }

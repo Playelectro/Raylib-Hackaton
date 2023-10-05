@@ -5,6 +5,7 @@
 #include <raymath.h>
 #include "position_component.h"
 #include "model_component.h"
+#include "rotate_around_axis_component.h"
 #include "physics_component.h"
 #include "model_registry.h"
 #include "texture_registry.h"
@@ -62,8 +63,26 @@ static Actor* addCelestialBody(Vector3 position, Quaternion rotation, Vector3 in
 	return actor;
 }
 
-static Actor* addCelestialBody(Vector3 position,Vector3 inital_vel, float mass, float radius, std::string texture) {
+static Actor* addCelestialBody(Vector3 position, float radius, float angle, std::string texture) {
+	Actor* actor = new Actor();
 
-	float i = GetRandomValue(1,360);
-	return addCelestialBody(position, {1,(float)GetRandomValue(0,1),0,i}, inital_vel, mass, radius, texture);
+	PositionComponent* position_component = new PositionComponent(position, {0, 1, 0, 0}, {radius,radius,radius});
+
+	RotateAroundAxisComponent* spin_component = new RotateAroundAxisComponent(angle);
+
+	ModelComponent* model_component = new ModelComponent(ModelRegistry::getInstance()->GrabModel(1, radius, 30, 30), TextureRegistry::getInstance()->GrabTexture(texture));
+	
+	actor->AddComponent(position_component);
+	actor->AddComponent(spin_component);
+	actor->AddComponent(model_component);
+
+	SystemManager::getInstance()->AddActor(actor);
+
+	return actor;
+}
+
+static Actor* addCelestialBody(Vector3 position, Vector3 inital_vel, float mass, float radius, std::string texture) {
+
+	float i = GetRandomValue(1, 360);
+	return addCelestialBody(position, { 1,(float)GetRandomValue(0,1),0,i }, inital_vel, mass, radius, texture);
 }

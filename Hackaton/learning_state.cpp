@@ -13,6 +13,15 @@ void LearningState::InitState(){
 	SpriteComponent* sprite;
 	sprite = new SpriteComponent(TextureRegistry::getInstance()->GrabTexture(std::string("SIMA")),0);
 
+	TextureRegistry::getInstance()->GrabTexture("texture_mercur");
+	TextureRegistry::getInstance()->GrabTexture("texture_venus");
+	TextureRegistry::getInstance()->GrabTexture("texture_pamant");
+	TextureRegistry::getInstance()->GrabTexture("texture_marte");
+	TextureRegistry::getInstance()->GrabTexture("texture_jupiter");
+	TextureRegistry::getInstance()->GrabTexture("texture_saturn");
+	TextureRegistry::getInstance()->GrabTexture("texture_uranus");
+	TextureRegistry::getInstance()->GrabTexture("texture_neptun");
+
 	actor->AddComponent(position);
 
 	actor->AddComponent(sprite);

@@ -193,6 +193,14 @@
     <Image Include="default.png" />
     <Image Include="SIMA.png" />
     <Image Include="textura.png" />
+    <Image Include="texture_pamant.png" />
+    <Image Include="texture_jupiter.png" />
+    <Image Include="texture_marte.png" />
+    <Image Include="texture_mercur.png" />
+    <Image Include="texture_neptun.png" />
+    <Image Include="texture_saturn.png" />
+    <Image Include="texture_uranus.png" />
+    <Image Include="texture_venus.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

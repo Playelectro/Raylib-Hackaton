@@ -244,5 +244,29 @@
     <Image Include="textura.png">
       <Filter>Resource Files\textures</Filter>
     </Image>
+    <Image Include="texture_mercur.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_pamant.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_jupiter.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_neptun.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_saturn.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_uranus.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_venus.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="texture_marte.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -13,6 +13,8 @@
 #include "model_component.h"
 #include "spin_actor_system.h"
 #include "rotate_around_axis_component.h"
+#include "util.h"
+#include "texture_registry.h"
 
 class LearningState : public AppState{
 public:
