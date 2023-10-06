@@ -166,10 +166,7 @@ void BlackHolePhysicsSystem::doLogic(std::vector<Actor*> actors, int current) {
 				actor_pshysics_a->velocity = toScalarVector(Vector3Add(toScalarVector(actor_pshysics_a->velocity, aux), toScalarVector(actor_pshysics_b->velocity, actor_pshysics_b->mass)), 1/actor_pshysics_a->mass);
 				actors[i]->markDeletion = true;
 				*/
-
 		}
-
-
 	}
 
 	if (actor_pshysics_a->is_black_hole == true)
